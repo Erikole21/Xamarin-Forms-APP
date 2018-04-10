@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:autocomplete="clr-namespace:ClientePeatonXamarin.Controls;assembly=ClientePeatonXamarin"
+             xmlns:repeater="clr-namespace:Xamarin.CustomControls;assembly=Xamarin.CustomControls.RepeaterView"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClientePeatonXamarin.Views.OficinasPage" Title="Oficinas">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="ItemCiudad">
+                <ViewCell>
+                    <StackLayout Padding="3">
+                        <Label Text="{Binding Nombre}" TextColor="{StaticResource naranja}" FontAttributes="Bold" />
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+            <DataTemplate x:Key="ItemHorario">
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal" Padding="3" HorizontalOptions="Center">
+                        <Label Text="{Binding}" TextColor="White" />
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+            <DataTemplate x:Key="ItemPunto">
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal" Padding="3" HorizontalOptions="CenterAndExpand">
+                        <Label Text="{Binding DireccionCentroServicio}" />
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView x:Name="MainScroll">
+            <Grid Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.ColumnSpan="2" Text="Encuentra los puntos mas cercanos desde:" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+                <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Label Text="Tu ubicación"/>
+                    <Switch IsToggled="{Binding Ubicacion,Mode=TwoWay}"/>
+                </StackLayout>
+                <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Label  Text="Otro Lugar"/>
+                    <Switch IsToggled="{Binding OtroLugar,Mode=TwoWay}"/>
+                </StackLayout>
+                <autocomplete:AutoCompleteView Grid.ColumnSpan="2" IsVisible="{Binding OtroLugar}" Grid.Row="2" SuggestionPlacement="Top" OnSuggestionOpen="Handle_OnSuggestionOpen" OpenOnFocus="true"
+                                               Placeholder="Seleccione Ciudad.." ItemsSource="{Binding Ciudades}" ShowSeparator="False"
+                                               SearchMember="Nombre" MaxResults="3" SelectedItem="{Binding CiudadSeleccionada}" ItemTemplate="{StaticResource ItemCiudad}">
+                </autocomplete:AutoCompleteView>
+                <Entry Grid.Row="3" Grid.ColumnSpan="2" IsVisible="{Binding OtroLugar}" Text="{Binding DireccionRecogida, Mode=TwoWay}" Placeholder="Dirección cercana..">
+                </Entry>
+
+                <Image x:Name="Consultar" Source="btnokactivo.png" Grid.Row="4" HorizontalOptions="End" HeightRequest="28" WidthRequest="28"/>
+                <Image x:Name="VerMapa" Source="newubicaroficinaactivo.png" Grid.Row="4" HorizontalOptions="Start" Grid.Column="1" HeightRequest="28" WidthRequest="28"/>
+                <StackLayout Grid.Row="5" Grid.ColumnSpan="2" IsVisible="{Binding VerDatos}">
+                    <StackLayout BackgroundColor="#000F19">
+                        <Label Text="{Binding DepartamentoBusqueda}" TextColor="White" HorizontalOptions="Center"/>
+                        <Label Text="{Binding ContactoAgencia}" TextColor="White" HorizontalOptions="Center"/>
+                        <Label Text="Servicios:" HorizontalOptions="Center"  TextColor="White"/>
+                        <repeater:RepeaterView Margin="0.5,0,0.5,0.5" ShowSeparator="false" 
+                                                               ItemsSource="{Binding HorariosAgencia}" ItemTemplate="{StaticResource ItemHorario}">
+                        </repeater:RepeaterView>
+                    </StackLayout>
+                    <Label Grid.Row="0" Text="Puntos más cercanos a su dirección:" HorizontalTextAlignment="Center"  FontAttributes="Bold" BackgroundColor="{StaticResource naranja}" TextColor="White"/>
+                    <repeater:RepeaterView Margin="0.5,0,0.5,0.5" ShowSeparator="false" 
+                                                               ItemsSource="{Binding PuntosCercanosRango}" ItemTemplate="{StaticResource ItemPunto}">
+                    </repeater:RepeaterView>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClientePeatonXamarin.Views.RequisitosFranquiciaPage" Title="Requisitos">
+    <ContentPage.Content>
+        <Grid Margin="10" RowSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3" />
+                <ColumnDefinition Width="5" />
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Image Source="Item.png" Grid.ColumnSpan="2"/>
+            <Label Grid.Column="2" Text="La ubicación de su local debe ser estratégica por eso es indispensable que tenga alto flujo vehicular y peatonal en la zona (vía principal)."/>
+            <Image Grid.Row="1" Source="Item.png" Grid.ColumnSpan="2"/>
+            <Label Grid.Row="1" Grid.Column="2" Text="Es necesario contar con una trayectoria mínima de 5 meses como acreditación de su negocio.*"/>
+            <Image Grid.Row="2" Source="Item.png" Grid.ColumnSpan="2"/>
+            <Label Grid.Row="2" Grid.Column="2" Text="Su local debe prestar los servicios de:" VerticalTextAlignment="Center"/>
+            <Image Grid.Row="3" Source="Item.png" Grid.Column="1"/>
+            <Label Grid.Row="3" Grid.Column="2" Text="Internet (Llamadas, recargas, servicios, etc.)" VerticalTextAlignment="Center"/>
+            <Image Grid.Row="4" Source="Item.png" Grid.Column="1"/>
+            <Label Grid.Row="4" Grid.Column="2" Text="Miscelánea y/o Papelería" VerticalTextAlignment="Center"/>
+            <Image Grid.Row="5" Source="Item.png" Grid.Column="1"/>
+            <Label Grid.Row="5" Grid.Column="2" Text="Centro de Accesorios y tecnología"  VerticalTextAlignment="Center"/>
+            <Image Grid.Row="6" Source="Item.png" Grid.ColumnSpan="2"/>
+            <Label Grid.Row="6" Grid.Column="2" Text="Es obligatorio que su negocio cuente con un espacio exclusivo para comercializar nuestros servicios."/>
+            <Label Grid.Row="7" Grid.ColumnSpan="3" Margin="0,10" Text="Aplica condiciones, las cuales serán aclaradas en la visita*" FontAttributes="Bold"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

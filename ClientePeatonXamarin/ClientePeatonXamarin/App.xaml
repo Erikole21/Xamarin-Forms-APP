@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dg="clr-namespace:Xamarin.Forms.DataGrid;assembly=Xamarin.Forms.DataGrid"
+             xmlns:accordion="clr-namespace:Xamarin.CustomControls;assembly=Xamarin.CustomControls.AccordionView"
+             x:Class="ClientePeatonXamarin.App">
+    <Application.Resources>
+
+        <!-- Application resource dictionary -->
+        <ResourceDictionary>
+            <!-- Pallete -->
+            <Color x:Key="primary-back-title-color">#000F19</Color>
+            <Color x:Key="primary-title-color">White</Color>
+            <Color x:Key="naranja">#FF5A00</Color>
+            <!-- Pallete-end -->
+            <Style ApplyToDerivedTypes="true" TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource Key=primary-back-title-color}"/>
+                <Setter Property="BarTextColor" Value="{StaticResource Key=primary-title-color}"/>
+            </Style>
+
+            <Style ApplyToDerivedTypes="True" TargetType="accordion:AccordionItemView">
+                <Setter Property="ActiveTextColor" Value="{StaticResource Key=primary-title-color}"/>
+                <Setter Property="TextColor" Value="{StaticResource Key=primary-title-color}"/>
+                <Setter Property="ButtonBackgroundColor" Value="{StaticResource Key=primary-back-title-color}"/>
+                <Setter Property="ButtonActiveBackgroundColor" Value="{StaticResource Key=primary-back-title-color}"/>
+                <Setter Property="TextPosition" Value="Left"/>
+                <Setter Property="BorderColor" Value="{StaticResource naranja}"/>
+            </Style>
+            <DataTemplate x:Key="ItemCiudad">
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal" Padding="3">
+                        <Label Text="{Binding Nombre}" TextColor="{StaticResource naranja}" FontAttributes="Bold" />
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

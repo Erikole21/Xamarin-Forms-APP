@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ClientePeatonXamarin.Code"
+             x:Class="ClientePeatonXamarin.Views.LoginRecogidasPage" Title="Solicita tu Recogida">
+    <ContentPage.Content>
+        <StackLayout Margin="5">
+            <Entry Placeholder="Ingrese número de cédula o NIT" Margin="5" Text="{Binding Usuario,Mode=TwoWay}" Keyboard="Numeric">
+                <Entry.Behaviors>
+                    <local:ObligatorioBehavior ButtonValida="{x:Reference Name=ContinuarButton}" LongitudMaxima="11"  />
+                </Entry.Behaviors>
+            </Entry>
+            <Entry Margin="5" IsPassword="True" Placeholder="Asignale una clave" Text="{Binding Clave,Mode=TwoWay}">
+                <Entry.Behaviors>
+                    <local:ObligatorioBehavior LongitudMaxima="15" ButtonValida="{x:Reference Name=ContinuarButton}"/>
+                </Entry.Behaviors>
+            </Entry>
+            <Button x:Name="ContinuarButton" Text="Continuar" Command="{Binding IngesarComand}" TextColor="{StaticResource primary-title-color}" BackgroundColor="{StaticResource naranja}"/>
+            <Button Text="Recordar Contraseña" Command="{Binding RecordarClaveComand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

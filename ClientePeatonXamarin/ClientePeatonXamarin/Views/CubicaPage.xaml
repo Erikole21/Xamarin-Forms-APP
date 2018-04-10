@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:accordion="clr-namespace:Xamarin.CustomControls;assembly=Xamarin.CustomControls.AccordionView"
+             xmlns:dg="clr-namespace:Xamarin.Forms.DataGrid;assembly=Xamarin.Forms.DataGrid"
+             xmlns:repeater="clr-namespace:Xamarin.CustomControls;assembly=Xamarin.CustomControls.RepeaterView"
+             xmlns:local="clr-namespace:ClientePeatonXamarin.Code"
+             xmlns:android="http://schemas.android.com/apk/res/android"             
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             xmlns:autocomplete="clr-namespace:ClientePeatonXamarin.Controls;assembly=ClientePeatonXamarin"
+             x:Class="ClientePeatonXamarin.Views.CubicaPage" Title="Cubicar">
+    <ContentPage.Content>
+        <StackLayout Margin="5" >
+            <Label Text="Ingrese medidas en centimetros" FontSize="Medium"/>
+            <Entry Text="{Binding Largo,Mode=TwoWay}" Placeholder="Ingrese largo." HorizontalOptions="FillAndExpand"  Keyboard="Numeric">
+                <Entry.Behaviors>
+                    <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" IsNumerico="True"  ValorMaximo="300" />
+                </Entry.Behaviors>
+            </Entry>
+            <Entry Text="{Binding Ancho,Mode=TwoWay}" Placeholder="Ingrese ancho." HorizontalOptions="FillAndExpand" Keyboard="Numeric" >
+                <Entry.Behaviors>
+                    <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" IsNumerico="True"  ValorMaximo="300"/>
+                </Entry.Behaviors>
+            </Entry>
+            <Entry Text="{Binding Alto,Mode=TwoWay}" Placeholder="Ingrese alto." HorizontalOptions="FillAndExpand"  Keyboard="Numeric">
+                <Entry.Behaviors>
+                    <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" IsNumerico="True"  ValorMaximo="300" />
+                </Entry.Behaviors>
+            </Entry>
+            <Button x:Name="guardarButton" Text="Aceptar" Command="{Binding CalcularPesoVolumetricoCommand}" TextColor="{StaticResource primary-title-color}" BackgroundColor="{StaticResource naranja}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+             

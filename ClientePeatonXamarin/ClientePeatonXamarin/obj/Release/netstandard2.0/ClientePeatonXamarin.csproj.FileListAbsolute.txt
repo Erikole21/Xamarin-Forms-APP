@@ -1,0 +1,10 @@
+F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin\bin\Release\netstandard2.0\ClientePeatonXamarin.deps.json
+F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin\bin\Release\netstandard2.0\ClientePeatonXamarin.dll
+F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin\bin\Release\netstandard2.0\ClientePeatonXamarin.pdb
+F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin\obj\Release\netstandard2.0\ClientePeatonXamarin.csproj.CoreCompileInputs.cache
+F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin\obj\Release\netstandard2.0\ClientePeatonXamarin.App.xaml.g.cs
+F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin\obj\Release\netstandard2.0\ClientePeatonXamarin.MainPage.xaml.g.cs
+F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin\obj\Release\netstandard2.0\ClientePeatonXamarin.AssemblyInfoInputs.cache
+F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin\obj\Release\netstandard2.0\ClientePeatonXamarin.AssemblyInfo.cs
+F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin\obj\Release\netstandard2.0\ClientePeatonXamarin.dll
+F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin\obj\Release\netstandard2.0\ClientePeatonXamarin.pdb

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SplashScreenSource>F:\Inter Xamarin\Webp.net-resizeimage %281%29.png</SplashScreenSource>
+    <AppIconSource>F:\Formatos Inter\images\images\manifest\mstile-310x310.png</AppIconSource>
+    <Source>F:\Formatos Inter\images\images\manifest\mstile-310x310.png</Source>
+    <SmallTileSource>F:\Formatos Inter\images\images\manifest\mstile-310x310.png</SmallTileSource>
+    <MediumTileSource>F:\Formatos Inter\images\images\manifest\mstile-310x310.png</MediumTileSource>
+    <WideTileSource>F:\Formatos Inter\images\images\manifest\mstile-310x310.png</WideTileSource>
+    <LargeTileSource>F:\Formatos Inter\images\images\manifest\mstile-310x310.png</LargeTileSource>
+    <PackageLogoSource>F:\Formatos Inter\images\images\manifest\mstile-310x310.png</PackageLogoSource>
+    <ProjectView>ProjectFiles</ProjectView>
+  </PropertyGroup>
+</Project>

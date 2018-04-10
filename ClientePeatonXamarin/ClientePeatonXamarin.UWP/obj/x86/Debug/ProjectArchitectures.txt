@@ -1,0 +1,1 @@
+F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\ClientePeatonXamarin.UWP.csproj;x86

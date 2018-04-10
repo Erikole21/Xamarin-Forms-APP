@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ClientePeatonXamarin.Code"
+             xmlns:autocomplete="clr-namespace:ClientePeatonXamarin.Controls;assembly=ClientePeatonXamarin"
+             x:Class="ClientePeatonXamarin.Views.FranquiciaPage" Title="Franquicia">
+    <ContentPage.Content>
+        <ScrollView x:Name="MainScroll">
+            <StackLayout Margin="5">
+                <StackLayout Orientation="Horizontal" Margin="0" HorizontalOptions="CenterAndExpand">
+                    <Label Text="Bienvenido " FontAttributes="Bold" />
+                    <Label Text="{Binding NombreCompletoPersona}" FontAttributes="Bold"/>
+                </StackLayout>
+                <Label Text="Antes de diligenciar el formulario es importante que leas los requisistos para obtener la aprobación." HorizontalTextAlignment="Center" FontAttributes="Bold" />
+                <Label x:Name="requisitos" Text="Ver Requisitos de Franquicias" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="{StaticResource naranja}" />
+                <Entry Placeholder="Número de cédula o NIT" Margin="5" Text="{Binding Usuario,Mode=TwoWay}" Keyboard="Numeric">
+                    <Entry.Behaviors>
+                        <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" LongitudMaxima="11"  />
+                    </Entry.Behaviors>
+                </Entry>
+                <Entry Text="{Binding NombreCompletoPersona, Mode=TwoWay}" Keyboard="Text" Placeholder="Nombres y Apellidos">
+                    <Entry.Behaviors>
+                        <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" LongitudMaxima="250"  />
+                    </Entry.Behaviors>
+                </Entry>
+                <autocomplete:AutoCompleteView SuggestionPlacement="Top" OnSuggestionOpen="Handle_OnSuggestionOpen" OpenOnFocus="true"
+                                               Placeholder="Ciudad de Origen..." ItemsSource="{Binding Ciudades}" ShowSeparator="False"
+                                               SearchMember="Nombre" MaxResults="3" SelectedItem="{Binding CiudadSeleccionada}" ItemTemplate="{StaticResource ItemCiudad}">
+                </autocomplete:AutoCompleteView>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="40"/>
+                    </Grid.ColumnDefinitions>
+                    <Entry Text="{Binding DireccionRecogida, Mode=TwoWay}" Placeholder="Dirección de la visita">
+                        <Entry.Behaviors>
+                            <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" LongitudMaxima="150"  />
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Image x:Name="ubicacion" Margin="5" Grid.Column="1" Source="interpoint.png"/>
+                </Grid>
+                <Entry Text="{Binding EmailPersona, Mode=TwoWay}" Placeholder="Correo electrónico" Keyboard="Email">
+                    <Entry.Behaviors>
+                        <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" LongitudMaxima="40"  />
+                    </Entry.Behaviors>
+                </Entry>
+                <Entry Text="{Binding CelularPersona, Mode=TwoWay}" Placeholder="Número Celular" Keyboard="Numeric">
+                    <Entry.Behaviors>
+                        <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" LongitudMaxima="10"  />
+                    </Entry.Behaviors>
+                </Entry>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition Height="40"/>                        
+                    </Grid.RowDefinitions>
+                    <Label Text="{Binding FotosCargadas}" Grid.ColumnSpan="2"/>
+                    <Label Grid.Row="1" Text="Fto Fachada 1" HorizontalTextAlignment="Center"/>
+                    <Label Grid.Row="1" Text="Fto Fachada 2" Grid.Column="1" HorizontalTextAlignment="Center"/>
+                    <Label Grid.Row="1" Text="Fto Fachada 3" Grid.Column="2" HorizontalTextAlignment="Center"/>
+                    <Image x:Name="fotoCaptura1" Grid.Row="2" Source="capturaguianara.png" Margin="5"/>
+                    <Image x:Name="fotoCaptura2" Grid.Row="2" Grid.Column="1" Source="capturaguianara.png" Margin="5"/>
+                    <Image x:Name="fotoCaptura3" Grid.Row="2" Grid.Column="2" Source="capturaguianara.png" Margin="5" />
+                </Grid>
+                <Label HorizontalTextAlignment="Start" Margin="0" Text="Fecha de la visita"/>
+                <StackLayout Orientation="Horizontal">
+                    <DatePicker Date="{Binding FechaRecogida, Mode=TwoWay}" MinimumDate="{Binding FechaMinima}"/>
+                    <TimePicker Time="{Binding HoraRecogida, Mode=TwoWay}" />
+                </StackLayout>
+                <Entry Text="{Binding PreguntarPor, Mode=TwoWay}" Placeholder="Preguntar por"/>
+                <Label HorizontalTextAlignment="Start" Margin="0" Text="¿Por qué cree viable la posibilidad de manejar un punto de venta en la zona?"/>
+                <Editor HeightRequest="100" Margin="0" Text="{Binding Observaciones}" />
+                <Button x:Name="guardarButton" Text="Solicitar estudio" Command="{Binding GuardarFranquiciaCommand}" TextColor="{StaticResource primary-title-color}" BackgroundColor="{StaticResource naranja}"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

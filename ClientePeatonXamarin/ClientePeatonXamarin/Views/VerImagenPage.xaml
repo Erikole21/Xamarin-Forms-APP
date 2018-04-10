@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ClientePeatonXamarin.Code"
+             x:Class="ClientePeatonXamarin.Views.VerImagenPage">    
+    <ContentPage.Content>
+        <ContentView>
+            <Image Source="{Binding Source}" Margin="1">
+                <Image.Behaviors>
+                    <local:MultiTouchBehavior IsTranslateEnabled="True" IsScaleEnabled="True" />
+                </Image.Behaviors>
+            </Image>
+        </ContentView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClientePeatonXamarin.Views.MapaPage"
+             xmlns:local="clr-namespace:ClientePeatonXamarin.Code;assembly=ClientePeatonXamarin"                          
+             Title="Puntos Cercanos">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <local:MapInterRapidisimoView AbsoluteLayout.LayoutFlags="All"  AbsoluteLayout.LayoutBounds="0, 0, 1.0, 1.0">
+                <local:MapInterRapidisimoView.Behaviors>
+                    <local:MapaBehavior  Puntos="{Binding Puntos, Mode=TwoWay}" UbicacioInicial="{Binding UbicacioInicial}"/>
+                </local:MapInterRapidisimoView.Behaviors>
+            </local:MapInterRapidisimoView>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
