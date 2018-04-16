@@ -59,7 +59,7 @@ namespace ClientePeatonXamarin.ViewModels
                         var locator = CrossGeolocator.Current;
                         locator.DesiredAccuracy = 50;
                         PosicionActual = await locator.GetPositionAsync(TimeSpan.FromSeconds(20));
-                    }                    
+                    }
                 }
             }
 
@@ -85,7 +85,10 @@ namespace ClientePeatonXamarin.ViewModels
                     else
                         await UbicarPorCiudad(geoCoder);
                 }
+
             }
+            else
+                Configuracion.Notificar("Habilite la ubicación en su dispositivo");
 
             return true;
         }
@@ -414,13 +417,16 @@ namespace ClientePeatonXamarin.ViewModels
                     Type = PinType.SearchResult,
                     Label = string.Format("Telefonos:{0}-{1}", s.Telefono1, s.Telefono2)
                 }));
-                puntos.Add(new Pin()
-                {
-                    Address = "Tu Ubicación",
-                    Position = new Position(UbicacioInicial.Latitud, UbicacioInicial.Longitud),
-                    Type = PinType.SearchResult,
-                    Label = "Cliente Inter Rapidísimo"
-                });
+
+                if (ubicacion)
+                    puntos.Add(new Pin()
+                    {
+                        Address = "Tu Ubicación",
+                        Position = new Position(UbicacioInicial.Latitud, UbicacioInicial.Longitud),
+                        Type = PinType.SearchResult,
+                        Label = "Cliente Inter Rapidísimo"
+                    });
+
                 OnPropertyChanged("Puntos");
             }
             else

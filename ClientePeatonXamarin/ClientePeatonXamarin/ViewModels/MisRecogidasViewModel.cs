@@ -27,12 +27,8 @@ namespace ClientePeatonXamarin.ViewModels
                 }
 
             }
-            else
-            {
-                Configuracion.Mensaje("Ingrese sus datos, e intente de nuevo para realizar la consulta en el sistema");
-                await Navegacion.PopAsync();
-                await Navegacion.PushAsync(new Views.LoginRecogidasPage(new LoginViewModel(Navegacion)));                
-            }
+            else            
+                Configuracion.Mensaje("Ingrese sus datos en solicitar recogidas, e intente de nuevo para realizar la consulta en el sistema");                            
         }
 
         public MisRecogidasViewModel(INavigation _navegacion)

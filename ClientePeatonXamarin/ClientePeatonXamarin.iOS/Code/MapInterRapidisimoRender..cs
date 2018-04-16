@@ -46,7 +46,7 @@ namespace ClientePeatonXamarin.iOS.Code
             annotationView = mapView.DequeueReusableAnnotation("Interpin") as MKPinAnnotationView;
             if (annotationView == null)
             {
-                annotationView = new MKPinAnnotationView(annotation, "Interpin")
+                annotationView = new MKAnnotationView(annotation, "Interpin")
                 {
                     CanShowCallout = true
                 };

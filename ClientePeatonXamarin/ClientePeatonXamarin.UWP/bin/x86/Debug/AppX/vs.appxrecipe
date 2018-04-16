@@ -31,13 +31,13 @@
     <AppXManifest Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-04-05T22:45:08.157</Modified>
+      <Modified>2018-04-12T14:41:08.788</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\bin\x86\Debug\ClientePeatonXamarin.UWP.exe">
       <PackagePath>entrypoint\ClientePeatonXamarin.UWP.exe</PackagePath>
-      <Modified>2018-04-05T22:45:06.319</Modified>
+      <Modified>2018-04-12T14:41:05.715</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\erikmrodriguezl\.nuget\packages\acr.userdialogs\6.5.1\lib\uap10.0\Acr.UserDialogs.Interface.dll">
       <PackagePath>Acr.UserDialogs.Interface.dll</PackagePath>
@@ -805,7 +805,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin\bin\Debug\netstandard2.0\ClientePeatonXamarin.dll">
       <PackagePath>ClientePeatonXamarin.dll</PackagePath>
-      <Modified>2018-04-05T22:19:08.921</Modified>
+      <Modified>2018-04-12T14:41:00.673</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\Assets\LargeTile.scale-100.png">
       <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
@@ -831,6 +831,10 @@
       <PackagePath>Assets\LargeTile.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2018-03-09T14:30:56.906</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\Assets\MisRecogidas.png">
+      <PackagePath>Assets\MisRecogidas.png</PackagePath>
+      <Modified>2018-04-12T14:22:51.300</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\Assets\SmallTile.scale-100.png">
       <PackagePath>Assets\SmallTile.scale-100.png</PackagePath>
@@ -943,9 +947,13 @@
       <PackagePath>Assets\markerMapSmall.png</PackagePath>
       <Modified>2018-04-05T19:52:03.678</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\Item.png">
+      <PackagePath>Item.png</PackagePath>
+      <Modified>2018-04-09T21:31:23.578</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\MisRecogidas.png">
       <PackagePath>MisRecogidas.png</PackagePath>
-      <Modified>2018-03-28T15:28:56.916</Modified>
+      <Modified>2018-04-12T14:01:03.413</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\Assets\MiUbicacion.png">
       <PackagePath>Assets\MiUbicacion.png</PackagePath>
@@ -959,9 +967,17 @@
       <PackagePath>newcubicar.png</PackagePath>
       <Modified>2018-04-02T18:34:41.990</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\newestudiofranquicia.png">
+      <PackagePath>newestudiofranquicia.png</PackagePath>
+      <Modified>2018-04-09T14:31:12.204</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\newmisrecogidas.png">
       <PackagePath>newmisrecogidas.png</PackagePath>
       <Modified>2018-03-12T22:49:49.094</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\newofrecerportafolioservicios.png">
+      <PackagePath>newofrecerportafolioservicios.png</PackagePath>
+      <Modified>2018-04-09T14:31:12.202</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\newsolicitavisitacomercial.png">
       <PackagePath>newsolicitavisitacomercial.png</PackagePath>
@@ -1128,13 +1144,17 @@
       <PackagePath>twitter.png</PackagePath>
       <Modified>2018-03-12T23:00:38.077</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\backgroundhome.jpg">
+      <PackagePath>backgroundhome.jpg</PackagePath>
+      <Modified>2018-04-11T23:03:52.521</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
       <Modified>2018-03-09T12:39:08.576</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\bin\x86\Debug\ClientePeatonXamarin.UWP.xr.xml">
       <PackagePath>ClientePeatonXamarin.UWP.xr.xml</PackagePath>
-      <Modified>2018-03-12T22:08:22.730</Modified>
+      <Modified>2018-04-12T14:36:02.391</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.16299.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -1183,11 +1203,11 @@
     <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-04-05T22:45:06.890</Modified>
+      <Modified>2018-04-12T14:41:07.170</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\bin\x86\Debug\Core\ClientePeatonXamarin.UWP.exe">
       <PackagePath>ClientePeatonXamarin.UWP.exe</PackagePath>
-      <Modified>2018-04-05T22:45:08.153</Modified>
+      <Modified>2018-04-12T14:41:08.777</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

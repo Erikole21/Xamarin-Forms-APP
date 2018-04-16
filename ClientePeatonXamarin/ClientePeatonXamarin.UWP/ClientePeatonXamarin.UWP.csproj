@@ -125,6 +125,8 @@
     <Content Include="Assets\StoreLogo.scale-150.png" />
     <Content Include="Assets\StoreLogo.scale-200.png" />
     <Content Include="Assets\StoreLogo.scale-400.png" />
+    <Content Include="backgroundhome.jpg" />
+    <AndroidResource Include="backgroundhome2.png" />
     <Content Include="btnokactivo.png" />
     <Content Include="buscar.png" />
     <Content Include="capturaguianara.png" />
@@ -134,7 +136,7 @@
     <Content Include="instagram.png" />
     <Content Include="interpoint.png" />
     <Content Include="Assets\markerMapSmall.png" />
-    <AndroidResource Include="Item.png" />
+    <Content Include="Item.png" />
     <Content Include="MisRecogidas.png" />
     <Content Include="Assets\MiUbicacion.png" />
     <Content Include="newcotizar.png" />
@@ -222,7 +224,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ClientePeatonXamarin\ClientePeatonXamarin.csproj">
-      <Project>{CCC5ECA9-FB9E-4725-8E3B-AFFEE46F9349}</Project>
+      <Project>{f2ed1249-45ca-436d-9efe-00a54126eb3d}</Project>
       <Name>ClientePeatonXamarin</Name>
     </ProjectReference>
   </ItemGroup>

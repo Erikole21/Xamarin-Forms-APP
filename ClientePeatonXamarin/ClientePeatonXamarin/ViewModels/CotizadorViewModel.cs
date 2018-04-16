@@ -270,8 +270,8 @@ namespace ClientePeatonXamarin.ViewModels
             Ciudades = new ObservableCollection<Modelos.PALocalidadDC>(ciudades);
             if (Ciudades == null)
             {
-                UserDialogs.Instance.Toast("No se cargaron las ciudades", TimeSpan.FromMilliseconds(Services.Configuracion.TiempoMensaje));
                 await Navegacion.PushAsync(new MainPage());
+                UserDialogs.Instance.Toast("No se cargaron las ciudades", TimeSpan.FromMilliseconds(Services.Configuracion.TiempoMensaje));
             }
 
         }
@@ -343,9 +343,9 @@ namespace ClientePeatonXamarin.ViewModels
             var tipoEntrega = await Services.CotizarService.Instancia.ObtenerTipoEntrega();
             TiposEntrega = new ObservableCollection<Modelos.ResponseGenericoAppDC>(tipoEntrega);
             if (TiposEntrega == null)
-            {
-                UserDialogs.Instance.Toast("No se cargaron los tipos de entrega ", TimeSpan.FromMilliseconds(Services.Configuracion.TiempoMensaje));
+            {                
                 await Navegacion.PushAsync(new MainPage());
+                UserDialogs.Instance.Toast("No se cargaron los tipos de entrega ", TimeSpan.FromMilliseconds(Services.Configuracion.TiempoMensaje));
             }
         }
 

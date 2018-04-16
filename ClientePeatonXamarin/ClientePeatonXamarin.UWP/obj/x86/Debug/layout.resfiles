@@ -10,6 +10,7 @@ Assets\LockScreenLogo.scale-150.png
 Assets\LockScreenLogo.scale-200.png
 Assets\LockScreenLogo.scale-400.png
 Assets\markerMapSmall.png
+Assets\MisRecogidas.png
 Assets\MiUbicacion.png
 Assets\SmallTile.scale-100.png
 Assets\SmallTile.scale-125.png
@@ -51,6 +52,7 @@ Assets\Wide310x150Logo.scale-125.png
 Assets\Wide310x150Logo.scale-150.png
 Assets\Wide310x150Logo.scale-200.png
 Assets\Wide310x150Logo.scale-400.png
+backgroundhome.jpg
 ClientePeatonXamarin.UWP.xr.xml
 btnokactivo.png
 buscar.png
@@ -60,10 +62,13 @@ cotizaactivonew.png
 facebook.png
 instagram.png
 interpoint.png
+Item.png
 MisRecogidas.png
 newcotizar.png
 newcubicar.png
+newestudiofranquicia.png
 newmisrecogidas.png
+newofrecerportafolioservicios.png
 newsolicitavisitacomercial.png
 newubicacion.png
 newubicaroficinaactivo.png

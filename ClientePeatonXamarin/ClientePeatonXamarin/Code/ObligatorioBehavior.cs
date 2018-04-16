@@ -39,7 +39,10 @@ namespace ClientePeatonXamarin.Code
                 {
                     if (ValorMaximo.HasValue)
                     {
-                        var valor = Convert.ToDecimal(textValue);
+                        decimal valor;
+                        if (!ValidarNumeric(textValue, out valor))
+                            ((Entry)sender).Text = valor.ToString();
+
                         if (valor > ValorMaximo.Value)
                             ((Entry)sender).Text = ValorMaximo.Value.ToString();
                     }
@@ -49,6 +52,20 @@ namespace ClientePeatonXamarin.Code
             }
             else
                 ((Entry)sender).PlaceholderColor = isValid ? Color.Default : Color.Red;
+        }
+
+        private bool ValidarNumeric(string valor, out decimal convertido)
+        {
+            try
+            {
+                convertido = Convert.ToDecimal(valor);
+                return true;
+            }
+            catch
+            {
+                convertido = 0;
+                return false;
+            }
         }
 
         /// <summary>

@@ -16,7 +16,7 @@ namespace ClientePeatonXamarin
             if (Application.Current.Properties.ContainsKey("Puntos"))
                 Application.Current.Properties.Remove("Puntos");
 
-            InitializeComponent();
+            InitializeComponent();                        
             InicializarEnlaces();
             ConsultarPuntos();
         }

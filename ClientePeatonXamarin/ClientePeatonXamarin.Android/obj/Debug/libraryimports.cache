@@ -6,20 +6,30 @@
     <ManifestDocument>obj\Debug\lp\20\jl\AndroidManifest.xml</ManifestDocument>
     <ManifestDocument>obj\Debug\lp\21\jl\AndroidManifest.xml</ManifestDocument>
     <ManifestDocument>obj\Debug\lp\22\jl\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Debug\lp\22\jl\manifest\AndroidManifest.xml</ManifestDocument>
     <ManifestDocument>obj\Debug\lp\23\jl\AndroidManifest.xml</ManifestDocument>
     <ManifestDocument>obj\Debug\lp\24\jl\AndroidManifest.xml</ManifestDocument>
     <ManifestDocument>obj\Debug\lp\25\jl\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Debug\lp\25\jl\manifest\AndroidManifest.xml</ManifestDocument>
     <ManifestDocument>obj\Debug\lp\26\jl\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Debug\lp\26\jl\manifest\AndroidManifest.xml</ManifestDocument>
     <ManifestDocument>obj\Debug\lp\27\jl\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Debug\lp\27\jl\manifest\AndroidManifest.xml</ManifestDocument>
     <ManifestDocument>obj\Debug\lp\28\jl\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Debug\lp\28\jl\manifest\AndroidManifest.xml</ManifestDocument>
     <ManifestDocument>obj\Debug\lp\29\jl\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Debug\lp\29\jl\manifest\AndroidManifest.xml</ManifestDocument>
     <ManifestDocument>obj\Debug\lp\30\jl\AndroidManifest.xml</ManifestDocument>
     <ManifestDocument>obj\Debug\lp\31\jl\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Debug\lp\31\jl\manifest\AndroidManifest.xml</ManifestDocument>
     <ManifestDocument>obj\Debug\lp\32\jl\AndroidManifest.xml</ManifestDocument>
     <ManifestDocument>obj\Debug\lp\48\jl\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Debug\lp\48\jl\manifest\AndroidManifest.xml</ManifestDocument>
     <ManifestDocument>obj\Debug\lp\49\jl\AndroidManifest.xml</ManifestDocument>
     <ManifestDocument>obj\Debug\lp\50\jl\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Debug\lp\50\jl\manifest\AndroidManifest.xml</ManifestDocument>
     <ManifestDocument>obj\Debug\lp\51\jl\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Debug\lp\51\jl\manifest\AndroidManifest.xml</ManifestDocument>
   </ManifestDocuments>
   <NativeLibraries />
   <Jars>

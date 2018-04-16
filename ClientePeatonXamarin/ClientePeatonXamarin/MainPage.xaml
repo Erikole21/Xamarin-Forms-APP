@@ -4,14 +4,14 @@
              xmlns:local="clr-namespace:ClientePeatonXamarin"
              xmlns:Mod="clr-namespace:ClientePeatonXamarin.ViewModels;assembly=ClientePeatonXamarin"
              x:Class="ClientePeatonXamarin.MainPage" 
-            Title="Inter Rapidísimo">
+            Title="Inter Rapidísimo" BackgroundImage="backgroundhome.jpg">
     <ContentPage.BindingContext>
         <Mod:MainViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.ToolbarItems>
-        <ToolbarItem Name="MisRecogidas" Order="Primary" Icon="MisRecogidas.png" Command="{Binding MisRecogidasCommand}" Text="Mis Recogidas" Priority="0" />
+        <ToolbarItem Name="MisRecogidas" Command="{Binding MisRecogidasCommand}" Text="Mis Recogidas" Icon="MisRecogidas.png"/>
     </ContentPage.ToolbarItems>
-    <Grid Padding="0,5,0,0">
+    <Grid Padding="0,5,0,0" ColumnSpacing="0" RowSpacing="0">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
@@ -22,13 +22,19 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="40"/>
         </Grid.ColumnDefinitions>
-        <Image x:Name="buscar" Source="buscar.png" Grid.Column="0" HeightRequest="40" WidthRequest="40"/>
-        <Entry Grid.Column="1" Placeholder="Ingrese Número Guía" Text="{Binding NumeroGuia, Mode=TwoWay}" Keyboard="Numeric"/>
-        <Image Grid.Column="2" x:Name="codigoBarras" Source="codigobarrahome.png" HeightRequest="40" WidthRequest="40" />
+        <Grid Margin="5,1,0,0" ColumnSpacing="0" RowSpacing="0" Grid.ColumnSpan="2" BackgroundColor="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image x:Name="buscar" Source="buscar.png" HeightRequest="40" Margin="1,0,0,0" WidthRequest="40"/>
+            <Entry x:Name="EntryGuia" Grid.Column="1" BackgroundColor="White" Placeholder="Sigue tu Envío" Margin="0" TextColor="Black" PlaceholderColor="Black" Text="{Binding NumeroGuia, Mode=TwoWay}" Keyboard="Numeric"/>
+        </Grid>
+        <Image Grid.Column="2" x:Name="codigoBarras" Source="codigobarrahome.png" HeightRequest="40" WidthRequest="40" Margin="2,1" />
         <StackLayout Grid.ColumnSpan="3" Grid.Row="1" VerticalOptions="Center">
-            <BoxView HeightRequest="1" BackgroundColor="{StaticResource naranja}" HorizontalOptions="FillAndExpand" />
-            <BoxView HeightRequest="1" BackgroundColor="{StaticResource naranja}" HorizontalOptions="FillAndExpand" />
-            <Grid Grid.ColumnSpan="3" Grid.Row="1" Padding="10" BackgroundColor="#000F19" HorizontalOptions="FillAndExpand">
+            <BoxView HeightRequest="1" BackgroundColor="{StaticResource naranja}" Opacity="0.5" HorizontalOptions="FillAndExpand" />
+            <BoxView HeightRequest="1" BackgroundColor="{StaticResource naranja}" Opacity="0.7" HorizontalOptions="FillAndExpand" />
+            <Grid Grid.ColumnSpan="3" VerticalOptions="Center" Grid.Row="2" Padding="10" BackgroundColor="#000F19" Opacity="0.5" HorizontalOptions="FillAndExpand">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
@@ -37,14 +43,28 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Image  x:Name="recogida" Source="newmisrecogidas.png" WidthRequest="80" HeightRequest="80"/>
-                <Image  x:Name="cotiza" Source="newcotizar.png" Grid.Column="1" WidthRequest="80" HeightRequest="80"/>
-                <Image  x:Name="oficina" Source="newubicacion.png"  Grid.Row="1" WidthRequest="80" HeightRequest="80"/>
-                <Image  x:Name="comercial" Source="newsolicitavisitacomercial.png" Grid.Column="1" WidthRequest="80" HeightRequest="80" Grid.Row="1"/>
+                <Image  WidthRequest="100" HeightRequest="100"/>
+                <Image  Grid.Column="1" WidthRequest="100" HeightRequest="100"/>
+                <Image  Grid.Row="1" WidthRequest="100" HeightRequest="100"/>
+                <Image  Grid.Column="1" WidthRequest="100" HeightRequest="100" Grid.Row="1"/>
             </Grid>
-            <BoxView HeightRequest="1" BackgroundColor="{StaticResource naranja}" HorizontalOptions="FillAndExpand" />
-            <BoxView HeightRequest="1" BackgroundColor="{StaticResource naranja}" HorizontalOptions="FillAndExpand" />
+            <BoxView HeightRequest="1" BackgroundColor="{StaticResource naranja}" Opacity="0.7" HorizontalOptions="FillAndExpand" />
+            <BoxView HeightRequest="1" BackgroundColor="{StaticResource naranja}" Opacity="0.5" HorizontalOptions="FillAndExpand" />
         </StackLayout>
+        <Grid Grid.ColumnSpan="3" VerticalOptions="Center" Grid.Row="1" Padding="10" HorizontalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image  x:Name="recogida" Source="newmisrecogidas.png" WidthRequest="100" HeightRequest="100"/>
+            <Image  x:Name="cotiza" Source="newcotizar.png" Grid.Column="1" WidthRequest="100" HeightRequest="100"/>
+            <Image  x:Name="oficina" Source="newubicacion.png"  Grid.Row="1" WidthRequest="100" HeightRequest="100"/>
+            <Image  x:Name="comercial" Source="newsolicitavisitacomercial.png" Grid.Column="1" WidthRequest="100" HeightRequest="100" Grid.Row="1"/>
+        </Grid>
         <Grid BackgroundColor="#000F19" Grid.ColumnSpan="3" Grid.Row="2">
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                 <Image  x:Name="facebook" Source="facebook.png" Margin="5"/>

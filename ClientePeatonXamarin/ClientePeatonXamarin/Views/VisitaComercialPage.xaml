@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ClientePeatonXamarin.Views.VisitaComercialPage" Title="Visita Comercial">
+             x:Class="ClientePeatonXamarin.Views.VisitaComercialPage" Title="Visita Comercial" BackgroundImage="backgroundhome2.png">
     <ContentPage.Content>
-        <Grid Margin="5">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <Image x:Name="portafolio" Source="newofrecerportafolioservicios.png" Margin="15" />
-            <Image x:Name="franquicia"  Grid.Row="1" Source="newestudiofranquicia.png" Margin="15"/>
+        <Grid Margin="5">           
+            <StackLayout VerticalOptions="Center">                
+                <Grid Padding="10"  HorizontalOptions="FillAndExpand">
+                    <Image x:Name="portafolio" WidthRequest="110" HeightRequest="110" Source="newofrecerportafolioservicios.png" Margin="15" />
+                    <Image x:Name="franquicia" WidthRequest="110" HeightRequest="110" Grid.Row="1" Source="newestudiofranquicia.png" Margin="15"/>
+                </Grid>                
+            </StackLayout>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -16,8 +16,9 @@ namespace ClientePeatonXamarin.ViewModels
 
         }
 
-        public LoginViewModel(INavigation _navegacion)
+        public LoginViewModel(INavigation _navegacion, bool misRecogidas)
         {
+            this.MisRecogidas = misRecogidas;
             this.Navegacion = _navegacion;
             IngesarComand = new Command(Ingresar);
             ValidarComand = new Command(ValidarUsuario);
@@ -26,6 +27,8 @@ namespace ClientePeatonXamarin.ViewModels
             CambiarClaveComand = new Command(CambiarClave);
 
         }
+
+        public bool MisRecogidas { get; set; }
 
         private string usuario;
 
@@ -330,7 +333,10 @@ namespace ClientePeatonXamarin.ViewModels
         {
             Application.Current.Properties["UsuarioActivo"] = usuario;
             await Navegacion.PopAsync();
-            await Navegacion.PushAsync(new RecogidasPage(new ViewModels.RecogidasViewModel(Navegacion)));
+            if (MisRecogidas)
+                await Navegacion.PushAsync(new MisRecogidas(new ViewModels.MisRecogidasViewModel(Navegacion)));
+            else
+                await Navegacion.PushAsync(new RecogidasPage(new ViewModels.RecogidasViewModel(Navegacion)));
         }
     }
 }

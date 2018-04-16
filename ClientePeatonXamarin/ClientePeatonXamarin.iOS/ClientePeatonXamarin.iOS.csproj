@@ -23,9 +23,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <MtouchArch>x86_64</MtouchArch>
+    <MtouchArch>i386, x86_64</MtouchArch>
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
+    <OptimizePNGs>false</OptimizePNGs>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -91,6 +92,7 @@
     <AppExtensionDebugBundleId />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Code\CustomNavigationRenderer.cs" />
     <Compile Include="Code\MapInterRapidisimoRender..cs" />
     <Compile Include="Code\QRCodeScanningService.cs" />
     <Compile Include="Main.cs" />
@@ -246,9 +248,6 @@
     <BundleResource Include="Resources\cotizaactivonew.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\btnokactivo.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\newcubicar.png" />
   </ItemGroup>
   <ItemGroup>
@@ -277,5 +276,14 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Item.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\backgroundhome.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\btnokactivo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\backgroundhome2.png" />
   </ItemGroup>
 </Project>

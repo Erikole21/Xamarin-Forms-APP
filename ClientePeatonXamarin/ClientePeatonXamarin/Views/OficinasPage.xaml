@@ -19,13 +19,9 @@
                         <Label Text="{Binding}" TextColor="White" />
                     </StackLayout>
                 </ViewCell>
-            </DataTemplate>
+            </DataTemplate>           
             <DataTemplate x:Key="ItemPunto">
-                <ViewCell>
-                    <StackLayout Orientation="Horizontal" Padding="3" HorizontalOptions="CenterAndExpand">
-                        <Label Text="{Binding DireccionCentroServicio}" />
-                    </StackLayout>
-                </ViewCell>
+                <TextCell Text="{Binding DireccionCentroServicio}" Detail="{Binding Telefono1}"></TextCell>
             </DataTemplate>
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -64,17 +60,16 @@
                 <Image x:Name="VerMapa" Source="newubicaroficinaactivo.png" Grid.Row="4" HorizontalOptions="Start" Grid.Column="1" HeightRequest="28" WidthRequest="28"/>
                 <StackLayout Grid.Row="5" Grid.ColumnSpan="2" IsVisible="{Binding VerDatos}">
                     <StackLayout BackgroundColor="#000F19">
-                        <Label Text="{Binding DepartamentoBusqueda}" TextColor="White" HorizontalOptions="Center"/>
-                        <Label Text="{Binding ContactoAgencia}" TextColor="White" HorizontalOptions="Center"/>
+                        <Label Text="{Binding DepartamentoBusqueda}" TextColor="White" HorizontalTextAlignment="Center"/>
+                        <Label Text="{Binding ContactoAgencia}" TextColor="White" HorizontalTextAlignment="Center"/>
                         <Label Text="Servicios:" HorizontalOptions="Center"  TextColor="White"/>
                         <repeater:RepeaterView Margin="0.5,0,0.5,0.5" ShowSeparator="false" 
                                                                ItemsSource="{Binding HorariosAgencia}" ItemTemplate="{StaticResource ItemHorario}">
                         </repeater:RepeaterView>
                     </StackLayout>
                     <Label Grid.Row="0" Text="Puntos más cercanos a su dirección:" HorizontalTextAlignment="Center"  FontAttributes="Bold" BackgroundColor="{StaticResource naranja}" TextColor="White"/>
-                    <repeater:RepeaterView Margin="0.5,0,0.5,0.5" ShowSeparator="false" 
-                                                               ItemsSource="{Binding PuntosCercanosRango}" ItemTemplate="{StaticResource ItemPunto}">
-                    </repeater:RepeaterView>
+                    <ListView Margin="0.5,0,0.5,0.5" ItemsSource="{Binding PuntosCercanosRango}" ItemTemplate="{StaticResource ItemPunto}">                        
+                    </ListView>                    
                 </StackLayout>
             </Grid>
         </ScrollView>

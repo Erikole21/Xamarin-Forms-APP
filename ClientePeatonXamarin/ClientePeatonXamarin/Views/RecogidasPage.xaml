@@ -73,12 +73,12 @@
                     </Grid.ColumnDefinitions>
                     <Entry Text="{Binding TotalPiezas, Mode=TwoWay}" Placeholder="# Total Piezas" Keyboard="Numeric">
                         <Entry.Behaviors>
-                            <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" LongitudMaxima="2"  />
+                            <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" IsNumerico="True" ValorMaximo="99"  />
                         </Entry.Behaviors>
                     </Entry>
                     <Entry Grid.Column="1" Text="{Binding PesoAproximado, Mode=TwoWay}" Placeholder="Peso Aprox. Kilos" Keyboard="Numeric">
                         <Entry.Behaviors>
-                            <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" LongitudMaxima="3"  />
+                            <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" IsNumerico="True" ValorMaximo="999" />
                         </Entry.Behaviors>
                     </Entry>
                     <!--<Image x:Name="fotoCaptura" Grid.Column="2" Source="capturaguianara.png" Margin="5" />-->

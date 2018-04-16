@@ -13,60 +13,29 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSLocationAlwaysUsageDescription</key>
-    <string>Podemos usar tu ubicación</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-    <string>Usaremos tu ubicación para mostrarte las oficinas mas cercanas</string>
-	<key>UISupportedInterfaceOrientations~ipad</key>
-	<key>NSCameraUsageDescription</key>
-	<string>Necesitamos acceder a tu camara.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Necesitamos acceder a tu carpeta de imagenes.</string>		
-	<key>NSMicrophoneUsageDescription</key>
-	<string>This app needs access to microphone.</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>This app needs access to the photo gallery.</string>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
 	<key>CFBundleDisplayName</key>
-	<string>Inter Rapidísimo</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.Interrapdisimo.Cliente</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
-	<key>CFBundleIconFiles</key>
-	<array>
-		<string>Icon-60@2x</string>
-		<string>Icon-60@3x</string>
-		<string>Icon-76</string>
-		<string>Icon-76@2x</string>
-		<string>Default</string>
-		<string>Default@2x</string>
-		<string>Default-568h@2x</string>
-		<string>Default-Portrait</string>
-		<string>Default-Portrait@2x</string>
-		<string>Icon-Small-40</string>
-		<string>Icon-Small-40@2x</string>
-		<string>Icon-Small-40@3x</string>
-		<string>Icon-Small</string>
-		<string>Icon-Small@2x</string>
-		<string>Icon-Small@3x</string>
-	</array>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
-	<key>CFBundleName</key>
-	<string>ClientePeatonXamarin</string>
+	<string>Inter Rapidisimo</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>UIMainStoryboardFile</key>
 	<string>LaunchScreen</string>
-	<key>XSLaunchImageAssets</key>
-	<string>Resources/Media.xcassets/LaunchImages.launchimage</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.interrapidisimo.ClientePeaton</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Ubicar puntos mas cercanos</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Necesitamos usar tu ubicación</string>
 	<key>XSAppIconAssets</key>
-	<string>Resources/Media.xcassets/AppIcons.appiconset</string>
+	<string>Media.xcassets/AppIconos.appiconset</string>
+	<key>XSLaunchImageAssets</key>
+	<string>Media.xcassets/LaunchImagenes.launchimage</string>
+	<key>CFBundleName</key>
+	<string>Inter Rapidisimo</string>
+	<key>MinimumOSVersion</key>
+	<string>8.0</string>
 </dict>
 </plist>

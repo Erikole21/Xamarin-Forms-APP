@@ -21,13 +21,13 @@
                     </Grid.ColumnDefinitions>
                     <Entry Text="{Binding PesoFisico,Mode=TwoWay}" Placeholder="Ingrese Peso Aprox. Kg." HorizontalOptions="FillAndExpand"   Unfocused="CalcularValorComercialPorPeso" Keyboard="Numeric">
                         <Entry.Behaviors>
-                            <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" LongitudMaxima="6" />
+                            <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" IsNumerico="True" ValorMaximo="999999"/>
                         </Entry.Behaviors>
                     </Entry>
                     <Image x:Name="cubicar" Source="newcubicar.png"  Grid.Column="1" WidthRequest="30" HeightRequest="30"/>
                 </Grid>
 
-                <Entry Text="{Binding PesoVolumetrico,Mode=TwoWay}" Placeholder="Ingrese Peso Volumétrico Aprox Kg." HorizontalOptions="FillAndExpand" Keyboard="Numeric" ></Entry>
+                <Entry Text="{Binding PesoVolumetrico,Mode=TwoWay}" Placeholder="Ingrese Peso Volumétrico Aprox Kg." HorizontalOptions="FillAndExpand" Keyboard="Numeric"></Entry>
                 <Entry Text="{Binding ValorComercial,Mode=TwoWay,StringFormat='{0:C}'}" Placeholder="Ingrese Valor Comercial" HorizontalOptions="FillAndExpand" TextChanged="CargarValorComercialPorPeso" Keyboard="Numeric">
                 </Entry>
                 <autocomplete:AutoCompleteView Padding="3" SuggestionPlacement="Top" OnSuggestionOpen="Handle_OnSuggestionOpen" OpenOnFocus="true"

@@ -115,8 +115,9 @@ namespace ClientePeatonXamarin.ViewModels
                 long id = await Services.RecogidasService.Instancia.GuardarRecogida(recogida, documentoPersona);
                 if (id > 0)
                 {
+                    await Navegacion.PopAsync();
                     Configuracion.Mensaje(string.Format("Su recogida ha sido aceptada. Su clave de seguridad es: {0}  Suminístresela al mensajero, al momento de la recogida.", documentoPersona.Substring(documentoPersona.Length - 2)));
-                    await Navegacion.PopAsync();                    
+                               
                 }
                 else
                 {
@@ -368,10 +369,15 @@ namespace ClientePeatonXamarin.ViewModels
             get { return fechaRecogida; }
             set
             {
-                fechaRecogida = value;
+                if (horaRecogida.HasValue)
+                    fechaRecogida = new DateTime(value.Year, value.Month, value.Day, horaRecogida.Value.Hours, horaRecogida.Value.Minutes, horaRecogida.Value.Seconds);
+                else
+                    fechaRecogida = value;
+
                 OnPropertyChanged("FechaRecogida");
             }
         }
+
 
         public DateTime FechaMinima { get; set; }
 

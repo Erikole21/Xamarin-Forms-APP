@@ -175,9 +175,6 @@
     <AndroidResource Include="Resources\drawable\newcubicar.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\btnokactivo.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\MisRecogidas.png" />
   </ItemGroup>
   <ItemGroup>
@@ -206,6 +203,15 @@
       <Project>{f2ed1249-45ca-436d-9efe-00a54126eb3d}</Project>
       <Name>ClientePeatonXamarin</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\backgroundhome.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\btnokactivo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\backgroundhome2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

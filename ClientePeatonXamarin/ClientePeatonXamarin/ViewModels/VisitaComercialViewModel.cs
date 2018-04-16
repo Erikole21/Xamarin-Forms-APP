@@ -88,17 +88,20 @@ namespace ClientePeatonXamarin.ViewModels
 
         private async void ConsultarHistorialRecogidaCliente()
         {
-            RGRecogidasDC ultima = await Services.RecogidasService.Instancia.ConsultarUltimaSolicitud(usuario);
-            if (ultima != null)
+            if (!string.IsNullOrEmpty(usuario))
             {
-                NombreCompletoPersona = ultima.Nombre;
-                EmailPersona = ultima.Correo;
-                CelularPersona = ultima.NumeroTelefono;
-                CiudadSeleccionada = ciudades?.FirstOrDefault(d => d.IdLocalidad == ultima.Ciudad);
-                DireccionRecogida = ultima.Direccion;
-                PreguntarPor = ultima.PreguntarPor;
-                if (!string.IsNullOrEmpty(ultima.Latitud) && !string.IsNullOrEmpty(ultima.Longitud))
-                    posicion = new Position(Convert.ToDouble(ultima.Latitud), Convert.ToDouble(ultima.Longitud));
+                RGRecogidasDC ultima = await Services.RecogidasService.Instancia.ConsultarUltimaSolicitud(usuario);
+                if (ultima != null)
+                {
+                    NombreCompletoPersona = ultima.Nombre;
+                    EmailPersona = ultima.Correo;
+                    CelularPersona = ultima.NumeroTelefono;
+                    CiudadSeleccionada = ciudades?.FirstOrDefault(d => d.IdLocalidad == ultima.Ciudad);
+                    DireccionRecogida = ultima.Direccion;
+                    PreguntarPor = ultima.PreguntarPor;
+                    if (!string.IsNullOrEmpty(ultima.Latitud) && !string.IsNullOrEmpty(ultima.Longitud))
+                        posicion = new Position(Convert.ToDouble(ultima.Latitud), Convert.ToDouble(ultima.Longitud));
+                }
             }
         }
 
@@ -144,7 +147,7 @@ namespace ClientePeatonXamarin.ViewModels
                     registroSolicitud.idCiudad = ciudadSeleccionada.IdLocalidad;
                     GuardarSolicitud(registroSolicitud);
                 }
-            }           
+            }
         }
 
         private async void GuardarSolicitud(RegistroSolicitud registroSolicitud)
@@ -152,8 +155,8 @@ namespace ClientePeatonXamarin.ViewModels
             long id = await Services.VisitaComercialService.Instancia.GuardarRecogida(registroSolicitud);
             if (id > 0)
             {
-                Configuracion.Mensaje(string.Format("Su solicitud ha sido realizada, en el transcurso del día uno de nuestros agentes comerciales se comunicará con usted."));
                 await Navegacion.PopAsync();
+                Configuracion.Mensaje(string.Format("Su solicitud ha sido realizada, en el transcurso del día uno de nuestros agentes comerciales se comunicará con usted."));
             }
             else
             {
@@ -303,7 +306,7 @@ namespace ClientePeatonXamarin.ViewModels
             if (ValidarFormulario())
             {
                 GuardarPortafolioValidado();
-            }            
+            }
         }
 
         private void GuardarPortafolioValidado()
@@ -484,7 +487,11 @@ namespace ClientePeatonXamarin.ViewModels
             get { return fechaRecogida; }
             set
             {
-                fechaRecogida = value;
+                if (horaRecogida.HasValue)
+                    fechaRecogida = new DateTime(value.Year, value.Month, value.Day, horaRecogida.Value.Hours, horaRecogida.Value.Minutes, horaRecogida.Value.Seconds);
+                else
+                    fechaRecogida = value;
+
                 OnPropertyChanged("FechaRecogida");
             }
         }

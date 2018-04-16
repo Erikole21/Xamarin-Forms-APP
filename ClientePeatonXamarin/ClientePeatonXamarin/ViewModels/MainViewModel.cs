@@ -13,7 +13,7 @@ namespace ClientePeatonXamarin.ViewModels
 
         public MainViewModel()
         {
-            numeroGuia = "700011041522";
+            //numeroGuia = "700011041522";
             MisRecogidasCommand = new Command(MisRecogidas);
         }
 
@@ -39,9 +39,16 @@ namespace ClientePeatonXamarin.ViewModels
             }
         }
 
-        private void MisRecogidas()
+        private async void MisRecogidas()
         {
-            Navegacion.PushAsync(new Views.MisRecogidas(new MisRecogidasViewModel(Navegacion)));
+            if (Application.Current.Properties.ContainsKey("UsuarioActivo") && Application.Current.Properties["UsuarioActivo"] != null)
+                await Navegacion.PushAsync(new Views.MisRecogidas(new MisRecogidasViewModel(Navegacion)));
+            else
+            {
+                await Navegacion.PushAsync(new Views.LoginRecogidasPage(new LoginViewModel(Navegacion, true)));
+                Configuracion.Mensaje("Ingrese sus datos, e intente de nuevo para realizar la consulta en el sistema");
+
+            }
         }
 
         private string numeroGuia;
@@ -65,7 +72,7 @@ namespace ClientePeatonXamarin.ViewModels
                 Navegacion.PushAsync(new Views.RecogidasPage(new RecogidasViewModel(Navegacion)));
             }
             else
-                Navegacion.PushAsync(new Views.LoginRecogidasPage(new LoginViewModel(Navegacion)));
+                Navegacion.PushAsync(new Views.LoginRecogidasPage(new LoginViewModel(Navegacion, false)));
         }
 
 
