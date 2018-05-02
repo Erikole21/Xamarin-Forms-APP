@@ -23,32 +23,48 @@ namespace ClientePeatonXamarin.Services
 
         public async Task<List<PUCentroServicioInfoGeneral>> ObtenerPuntosActivos()
         {
-            var client = new RestClient(Configuracion.BaseServicioInterUrl);
-            var request = new RestRequest(string.Format("Parametros/ObtenerInformacionGeneralCentrosServicioAPP"), Method.GET);
-            var response = await client.ExecuteGetTaskAsync<List<PUCentroServicioInfoGeneral>>(request);
-            if (response.ResponseStatus == ResponseStatus.Completed)
+            try
             {
-                if (response.StatusCode == System.Net.HttpStatusCode.InternalServerError)
+                var client = new RestClient(Configuracion.BaseServicioInterUrl);
+                var request = new RestRequest(string.Format("Parametros/ObtenerInformacionGeneralCentrosServicioAPP"), Method.GET);
+                var response = await client.ExecuteGetTaskAsync<List<PUCentroServicioInfoGeneral>>(request);
+                if (response.ResponseStatus == ResponseStatus.Completed)
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.InternalServerError)
+                        return null;
+                    return response.Data;
+                }
+                else
                     return null;
-                return response.Data;
             }
-            else
+            catch
+            {
+                //se atrapa la excepcion generalemte por conexion con el servidor para q no totee la APP
                 return null;
+            }
         }
 
         public async Task<List<string>> ObtenerHorarioCentroServicio(long idCentroServicio)
         {
-            var client = new RestClient(Configuracion.BaseServicioInterUrl);
-            var request = new RestRequest(string.Format("Parametros/ObtenerHorariosCentroServicioAppRecogidas/{0}", idCentroServicio), Method.GET);
-            var response = await client.ExecuteGetTaskAsync<List<string>>(request);
-            if (response.ResponseStatus == ResponseStatus.Completed)
+            try
             {
-                if (response.StatusCode == System.Net.HttpStatusCode.InternalServerError)
+                var client = new RestClient(Configuracion.BaseServicioInterUrl);
+                var request = new RestRequest(string.Format("Parametros/ObtenerHorariosCentroServicioAppRecogidas/{0}", idCentroServicio), Method.GET);
+                var response = await client.ExecuteGetTaskAsync<List<string>>(request);
+                if (response.ResponseStatus == ResponseStatus.Completed)
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.InternalServerError)
+                        return null;
+                    return response.Data;
+                }
+                else
                     return null;
-                return response.Data;
             }
-            else
+            catch
+            {
+                //se atrapa la excepcion generalemte por conexion con el servidor para q no totee la APP
                 return null;
+            }
         }
 
     }

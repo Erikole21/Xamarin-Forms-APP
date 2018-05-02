@@ -10,25 +10,40 @@
              xmlns:autocomplete="clr-namespace:ClientePeatonXamarin.Controls;assembly=ClientePeatonXamarin"
              x:Class="ClientePeatonXamarin.Views.CubicaPage" Title="Cubicar">
     <ContentPage.Content>
-        <StackLayout Margin="5" >
-            <Label Text="Ingrese medidas en centimetros" FontSize="Medium"/>
-            <Entry Text="{Binding Largo,Mode=TwoWay}" Placeholder="Ingrese largo." HorizontalOptions="FillAndExpand"  Keyboard="Numeric">
-                <Entry.Behaviors>
-                    <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" IsNumerico="True"  ValorMaximo="300" />
-                </Entry.Behaviors>
-            </Entry>
-            <Entry Text="{Binding Ancho,Mode=TwoWay}" Placeholder="Ingrese ancho." HorizontalOptions="FillAndExpand" Keyboard="Numeric" >
-                <Entry.Behaviors>
-                    <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" IsNumerico="True"  ValorMaximo="300"/>
-                </Entry.Behaviors>
-            </Entry>
-            <Entry Text="{Binding Alto,Mode=TwoWay}" Placeholder="Ingrese alto." HorizontalOptions="FillAndExpand"  Keyboard="Numeric">
-                <Entry.Behaviors>
-                    <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" IsNumerico="True"  ValorMaximo="300" />
-                </Entry.Behaviors>
-            </Entry>
-            <Button x:Name="guardarButton" Text="Aceptar" Command="{Binding CalcularPesoVolumetricoCommand}" TextColor="{StaticResource primary-title-color}" BackgroundColor="{StaticResource naranja}"/>
-        </StackLayout>
+
+        <Grid ColumnSpacing="0" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="168"/>
+                <RowDefinition Height="48"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="20"/>
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0" Aspect="AspectFill" Source="FondoCotizaEnvio.png"/>
+            <Image Source="logoInter.png" HeightRequest="60" VerticalOptions="Start"/>
+            <Image Source="LineaNaranja.png" VerticalOptions="Start"/>
+            <Label Text="CUBICA TU ENVÍO" VerticalTextAlignment="End" Margin="15" FontSize="Medium" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="White"/>
+            <Image Grid.Row="1" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" Source="SelectCodigoBarrasNanranja.png" HeightRequest="10" WidthRequest="40"/>
+            <StackLayout Grid.Row="2" Margin="5" >
+                <Label Text="Ingrese medidas en centimetros" FontSize="Medium"/>
+                <Entry Text="{Binding Largo,Mode=TwoWay}" Placeholder="Ingrese largo." HorizontalOptions="FillAndExpand"  Keyboard="Numeric">
+                    <Entry.Behaviors>
+                        <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" IsNumerico="True"  ValorMaximo="300" />
+                    </Entry.Behaviors>
+                </Entry>
+                <Entry Text="{Binding Ancho,Mode=TwoWay}" Placeholder="Ingrese ancho." HorizontalOptions="FillAndExpand" Keyboard="Numeric" >
+                    <Entry.Behaviors>
+                        <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" IsNumerico="True"  ValorMaximo="300"/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Entry Text="{Binding Alto,Mode=TwoWay}" Placeholder="Ingrese alto." HorizontalOptions="FillAndExpand"  Keyboard="Numeric">
+                    <Entry.Behaviors>
+                        <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" IsNumerico="True"  ValorMaximo="300" />
+                    </Entry.Behaviors>
+                </Entry>
+                <Button x:Name="guardarButton" Text="Aceptar" Command="{Binding CalcularPesoVolumetricoCommand}"  Margin="20,5,20,5" TextColor="White" BackgroundColor="{StaticResource primary-back-title-color}"/>
+            </StackLayout>
+            <Label Grid.Row="3" HorizontalTextAlignment="Center" Text="Inter Rapidísimo S.A"/>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
              

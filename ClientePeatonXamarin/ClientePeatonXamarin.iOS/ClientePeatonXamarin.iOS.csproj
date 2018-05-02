@@ -72,8 +72,8 @@
     <ConsolePause>False</ConsolePause>
     <MtouchArch>ARM64</MtouchArch>
     <BuildIpa>True</BuildIpa>
-    <CodesignProvision>Automatic:AdHoc</CodesignProvision>
-    <CodesignKey>iPhone Distribution</CodesignKey>
+    <CodesignProvision>Perfil APP Interrapidisimo</CodesignProvision>
+    <CodesignKey>iPhone Distribution: INTER RAPIDISIMO S A (Z9BXSSM8Y2)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
@@ -87,6 +87,7 @@
     <CodesignProvision>Automatic:AppStore</CodesignProvision>
     <CodesignKey>iPhone Distribution</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <BuildIpa>true</BuildIpa>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
     <AppExtensionDebugBundleId />
@@ -219,16 +220,16 @@
     <ImageAsset Include="Media.xcassets\LaunchImagenes.launchimage\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Media.xcassets\LaunchImagenes.launchimage\Webp.net-resizeimage1.png">
+    <ImageAsset Include="Media.xcassets\LaunchImagenes.launchimage\Default-568h@2x.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Media.xcassets\LaunchImagenes.launchimage\Webp.net-resizeimage2.png">
+    <ImageAsset Include="Media.xcassets\LaunchImagenes.launchimage\Default-Portrait.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Media.xcassets\LaunchImagenes.launchimage\Webp.net-resizeimage3.png">
+    <ImageAsset Include="Media.xcassets\LaunchImagenes.launchimage\Default-Portrait@2x.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Media.xcassets\LaunchImagenes.launchimage\Webp.net-resizeimage4.png">
+    <ImageAsset Include="Media.xcassets\LaunchImagenes.launchimage\Default@2x.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Media.xcassets\LaunchImagenes.launchimage\Webp.net-resizeimage5.png">
@@ -263,12 +264,6 @@
     <BundleResource Include="Resources\MiUbicacion.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClientePeatonXamarin\ClientePeatonXamarin.csproj">
-      <Project>{f2ed1249-45ca-436d-9efe-00a54126eb3d}</Project>
-      <Name>ClientePeatonXamarin</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\newofrecerportafolioservicios.png" />
   </ItemGroup>
   <ItemGroup>
@@ -278,12 +273,51 @@
     <BundleResource Include="Resources\Item.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\backgroundhome.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\btnokactivo.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\backgroundhome2.png" />
+    <ProjectReference Include="..\ClientePeatonXamarin\ClientePeatonXamarin.csproj">
+      <Project>{f2ed1249-45ca-436d-9efe-00a54126eb3d}</Project>
+      <Name>ClientePeatonXamarin</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\FondoContacoComercial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\FondoCotizaEnvio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\FondoLogin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\FondoMisRecogidas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\FondoSigueTuEnvio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\FondoSolicitaRecogida.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\FondoUbicaTuOficina.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LineaNaranja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logoInter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\SelectCodigoBarras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\SelectCodigoBarrasNanranja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\splashscreen.png" />
   </ItemGroup>
 </Project>

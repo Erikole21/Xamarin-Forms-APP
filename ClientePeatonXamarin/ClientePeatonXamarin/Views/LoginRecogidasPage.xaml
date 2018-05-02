@@ -4,19 +4,33 @@
              xmlns:local="clr-namespace:ClientePeatonXamarin.Code"
              x:Class="ClientePeatonXamarin.Views.LoginRecogidasPage" Title="Solicita tu Recogida">
     <ContentPage.Content>
-        <StackLayout Margin="5">
-            <Entry Placeholder="Ingrese número de cédula o NIT" Margin="5" Text="{Binding Usuario,Mode=TwoWay}" Keyboard="Numeric">
-                <Entry.Behaviors>
-                    <local:ObligatorioBehavior ButtonValida="{x:Reference Name=ContinuarButton}" LongitudMaxima="11"  />
-                </Entry.Behaviors>
-            </Entry>
-            <Entry Margin="5" IsPassword="True" Placeholder="Asignale una clave" Text="{Binding Clave,Mode=TwoWay}">
-                <Entry.Behaviors>
-                    <local:ObligatorioBehavior LongitudMaxima="15" ButtonValida="{x:Reference Name=ContinuarButton}"/>
-                </Entry.Behaviors>
-            </Entry>
-            <Button x:Name="ContinuarButton" Text="Continuar" Command="{Binding IngesarComand}" TextColor="{StaticResource primary-title-color}" BackgroundColor="{StaticResource naranja}"/>
-            <Button Text="Recordar Contraseña" Command="{Binding RecordarClaveComand}"/>
-        </StackLayout>
+        <Grid ColumnSpacing="0" RowSpacing="0">
+            <Grid.RowDefinitions>                
+                <RowDefinition Height="168"/>
+                <RowDefinition Height="48"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="20"/>
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0" Aspect="AspectFill" Source="FondoLogin.png"/>
+            <Image Source="logoInter.png" HeightRequest="60" VerticalOptions="Start"/>
+            <Image Source="LineaNaranja.png" VerticalOptions="Start"/>
+            <Label Text="INGRESAR" VerticalTextAlignment="End" Margin="15" FontSize="Medium" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="White"/>
+            <Image Grid.Row="1" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" Source="SelectCodigoBarrasNanranja.png" HeightRequest="10" WidthRequest="40"/>
+            <StackLayout Grid.Row="2" Margin="5">
+                <Entry Placeholder="Ingrese número de cédula o NIT" Margin="5" Text="{Binding Usuario,Mode=TwoWay}" Keyboard="Numeric">
+                    <Entry.Behaviors>
+                        <local:ObligatorioBehavior ButtonValida="{x:Reference Name=ContinuarButton}" LongitudMaxima="11"  />
+                    </Entry.Behaviors>
+                </Entry>
+                <Entry Margin="5" IsPassword="True" Placeholder="Asignale una clave" Text="{Binding Clave,Mode=TwoWay}">
+                    <Entry.Behaviors>
+                        <local:ObligatorioBehavior LongitudMaxima="15" ButtonValida="{x:Reference Name=ContinuarButton}"/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Button x:Name="ContinuarButton" Text="Continuar" Command="{Binding IngesarComand}" Margin="20,5,20,5" TextColor="White" BackgroundColor="{StaticResource primary-back-title-color}"/>
+                <Button Text="Recordar Acceso" Command="{Binding RecordarClaveComand}" Margin="20,5,20,5" />
+            </StackLayout>
+            <Label Grid.Row="3" HorizontalTextAlignment="Center" Text="Inter Rapidísimo S.A"/>
+        </Grid>        
     </ContentPage.Content>
 </ContentPage>

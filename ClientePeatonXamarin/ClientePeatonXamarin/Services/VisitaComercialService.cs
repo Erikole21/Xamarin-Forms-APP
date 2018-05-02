@@ -23,25 +23,34 @@ namespace ClientePeatonXamarin.Services
 
         public async Task<long> GuardarRecogida(RegistroSolicitud registroSolicitud)
         {
-            var client = new RestClient(Configuracion.BaseServicioRapsUrl);
-            var request = new RestRequest(string.Format("SolicitudesRaps/CrearSolicitud"), Method.POST);
-            request.AddJsonBody(registroSolicitud);
-            request.AddHeader("usuario", "Admin");
-            request.AddHeader("IdAplicativoOrigen", "7");
-            request.AddHeader("IdCentroServicio", "1");
-            request.AddHeader("IdUsuario", "1");
-            request.AddHeader("NombreCentroServicio", "1");
-
-            var response = await client.ExecutePostTaskAsync<long>(request);
-            if (response.ResponseStatus == ResponseStatus.Completed)
+            try
             {
-                if (response.StatusCode == System.Net.HttpStatusCode.InternalServerError)
+                var client = new RestClient(Configuracion.BaseServicioRapsUrl);
+                var request = new RestRequest(string.Format("SolicitudesRaps/CrearSolicitud"), Method.POST);
+                request.AddJsonBody(registroSolicitud);
+                request.AddHeader("usuario", "Admin");
+                request.AddHeader("IdAplicativoOrigen", "7");
+                request.AddHeader("IdCentroServicio", "1");
+                request.AddHeader("IdUsuario", "1");
+                request.AddHeader("NombreCentroServicio", "1");
+
+                var response = await client.ExecutePostTaskAsync<long>(request);
+                if (response.ResponseStatus == ResponseStatus.Completed)
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.InternalServerError)
+                        return 0;
+
+                    return response.Data;
+                }
+                else
+                {
                     return 0;
+                }
 
-                return response.Data;
             }
-            else
+            catch
             {
+                //se atrapa la excepcion generalemte por conexion con el servidor para q no totee la APP
                 return 0;
             }
         }

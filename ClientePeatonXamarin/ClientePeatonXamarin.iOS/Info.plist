@@ -14,13 +14,13 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>CFBundleDisplayName</key>
-	<string>Inter Rapidisimo</string>
+	<string>Inter Rapidísimo</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>UIMainStoryboardFile</key>
 	<string>LaunchScreen</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.interrapidisimo.ClientePeaton</string>
+	<string>com.interrapidisimo.www</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>UILaunchStoryboardName</key>
@@ -29,6 +29,14 @@
 	<string>Ubicar puntos mas cercanos</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Necesitamos usar tu ubicación</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Neceistamos Usar tu camara para la opción de Franquicia.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app needs access to photos.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This app needs access to microphone.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>This app needs access to the photo gallery.</string>
 	<key>XSAppIconAssets</key>
 	<string>Media.xcassets/AppIconos.appiconset</string>
 	<key>XSLaunchImageAssets</key>
@@ -36,6 +44,6 @@
 	<key>CFBundleName</key>
 	<string>Inter Rapidisimo</string>
 	<key>MinimumOSVersion</key>
-	<string>8.0</string>
+	<string>10.0</string>
 </dict>
 </plist>

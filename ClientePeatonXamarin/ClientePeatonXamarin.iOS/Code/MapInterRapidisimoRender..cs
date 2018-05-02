@@ -62,7 +62,5 @@ namespace ClientePeatonXamarin.iOS.Code
 
             return annotationView;
         }
-
-
     }
 }

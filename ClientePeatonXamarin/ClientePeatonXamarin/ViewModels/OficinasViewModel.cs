@@ -58,7 +58,7 @@ namespace ClientePeatonXamarin.ViewModels
                     {
                         var locator = CrossGeolocator.Current;
                         locator.DesiredAccuracy = 50;
-                        PosicionActual = await locator.GetPositionAsync(TimeSpan.FromSeconds(20));
+                        PosicionActual = await locator.GetPositionAsync(TimeSpan.FromSeconds(20));                        
                     }
                 }
             }
@@ -75,7 +75,7 @@ namespace ClientePeatonXamarin.ViewModels
                     Geocoder geoCoder = new Geocoder();
                     if (!string.IsNullOrWhiteSpace(DireccionRecogida))
                     {
-                        var posiciones = await geoCoder.GetPositionsForAddressAsync(DireccionRecogida);
+                        var posiciones = await geoCoder.GetPositionsForAddressAsync(DireccionRecogida);                        
                         if (posiciones.Count() > 0)
                             PosicionActual = new Plugin.Geolocator.Abstractions.Position(posiciones.FirstOrDefault().Latitude, posiciones.FirstOrDefault().Longitude);
                         else

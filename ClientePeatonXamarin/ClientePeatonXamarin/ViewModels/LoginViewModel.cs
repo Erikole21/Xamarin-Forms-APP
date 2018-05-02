@@ -25,8 +25,9 @@ namespace ClientePeatonXamarin.ViewModels
             RecordarClaveComand = new Command(RecordarClave);
             EnviarComand = new Command(EnviarRecuperacion);
             CambiarClaveComand = new Command(CambiarClave);
+        }       
 
-        }
+
 
         public bool MisRecogidas { get; set; }
 
@@ -235,7 +236,8 @@ namespace ClientePeatonXamarin.ViewModels
                         && string.IsNullOrEmpty(usuarioExiste.Correo) && string.IsNullOrEmpty(usuarioExiste.Celular))
                     {
                         Notificar("Sin datos de contato, Guarda una recogida para almacenar datos de contaco y recuperar tu clave");
-                        GuardarUsuarioValidado(); // para q ingrese informacion de recogida y datos para proxima ingreso
+                        await Navegacion.PopAsync(); //quitar vista de recuperar clave
+                        await Navegacion.PopAsync(); //quitar vista de login
                     }
                     else
                     {

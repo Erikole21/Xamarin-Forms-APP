@@ -90,4 +90,3 @@ F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.iOS\ob
 F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.iOS\obj\iPhoneSimulator\Debug\ClientePeatonXamarin.iOS.csproj.CopyComplete
 F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.iOS\obj\iPhoneSimulator\Debug\ClientePeatonXamarin.iOS.exe
 F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.iOS\obj\iPhoneSimulator\Debug\ClientePeatonXamarin.iOS.pdb
-F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.iOS\bin\iPhoneSimulator\Debug\ClientePeatonXamarin.dll.mdb

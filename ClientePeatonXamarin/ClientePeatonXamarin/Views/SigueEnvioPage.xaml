@@ -55,216 +55,231 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <ScrollView Padding="0,5,0,5">
-            <Grid RowSpacing="0">
+        <ScrollView>
+            <Grid ColumnSpacing="0" RowSpacing="0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="80"/>                    
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="11"/>
-                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="168"/>
+                    <RowDefinition Height="48"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-                    <Label Text="Envío No." FontSize="Large" FontAttributes="Bold"/>
-                    <Label Text="{Binding NumeroGuia}" FontSize="Large" FontAttributes="Bold"/>
-                </StackLayout>                
-                <StackLayout Padding="2" Grid.Row="1" Grid.RowSpan="1" VerticalOptions="Center" HorizontalOptions="Center">
-                    <Label Text="ULTIMO ESTADO DEL ENVÍO" HorizontalOptions="CenterAndExpand" FontSize="Small" FontAttributes="Bold"/>
-                    <Label Text="{Binding EstadoGuia}" TextColor="{StaticResource naranja}" FontSize="Large" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
-                    <Label Text="{Binding FechaEstado}" FontSize="9" TextColor="{StaticResource naranja}" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
-                </StackLayout>
-                <Grid Grid.Row="2" Margin="0,3,0,0">
-                    <accordion:AccordionView KeepOnlyOneItemOpen="false" Spacing="0">
-                        <accordion:AccordionView.Children>
-                            <accordion:AccordionItemView Text="Rastreo del envío" IsVisible="{Binding RastreoGuiaVisible}">
-                                <accordion:AccordionItemView.ItemContent>
-                                    <dg:DataGrid Margin="0.5,5,0.5,1" ItemsSource="{Binding EstadosGuia}" HeaderTextColor="White" BorderColor="#f8f8ff" BorderThickness="1" 
+                <Image Grid.Row="0" Aspect="AspectFill" Source="FondoSigueTuEnvio.png"/>
+                <Image Source="logoInter.png" HeightRequest="60" VerticalOptions="Start"/>
+                <Image Source="LineaNaranja.png" VerticalOptions="Start"/>
+                <Label Text="SIGUE TU ENVIO" VerticalTextAlignment="End" Margin="15" FontSize="Medium" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="White"/>
+                <Image Grid.Row="1" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" Source="SelectCodigoBarrasNanranja.png" HeightRequest="10" WidthRequest="40"/>
+
+                <Grid Grid.Row="2" Padding="0,5,0,5" RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="11"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                        <Label Text="Envío No." FontSize="Large" FontAttributes="Bold"/>
+                        <Label Text="{Binding NumeroGuia}" FontSize="Large" FontAttributes="Bold"/>
+                    </StackLayout>
+                    <StackLayout Padding="2" Grid.Row="1" Grid.RowSpan="1" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Label Text="ULTIMO ESTADO DEL ENVÍO" HorizontalOptions="CenterAndExpand" FontSize="Small" FontAttributes="Bold"/>
+                        <Label Text="{Binding EstadoGuia}" TextColor="{StaticResource naranja}" FontSize="Large" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
+                        <Label Text="{Binding FechaEstado}" FontSize="9" TextColor="{StaticResource naranja}" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
+                    </StackLayout>
+                    <Grid Grid.Row="2" Margin="0,3,0,8">
+                        <accordion:AccordionView KeepOnlyOneItemOpen="false" Spacing="0">
+                            <accordion:AccordionView.Children>
+                                <accordion:AccordionItemView Text="Rastreo del envío" IsVisible="{Binding RastreoGuiaVisible}">
+                                    <accordion:AccordionItemView.ItemContent>
+                                        <dg:DataGrid Margin="0.5,5,0.5,4" ItemsSource="{Binding EstadosGuia}" HeaderTextColor="White" BorderColor="#f8f8ff" BorderThickness="1" 
                                                      HeaderBackground="#000F19" FontSize="9" IsSortable="False" SelectionEnabled="False">
-                                        <dg:DataGrid.HeaderFontSize>
-                                            <OnIdiom  x:TypeArguments="x:Double">
-                                                <OnIdiom.Tablet>11</OnIdiom.Tablet>
-                                                <OnIdiom.Phone>9</OnIdiom.Phone>
-                                            </OnIdiom>
-                                        </dg:DataGrid.HeaderFontSize>
-                                        <dg:DataGrid.Columns>
-                                            <dg:DataGridColumn Title="Ciudad" PropertyName="EstadoGuia.Ciudad"/>
-                                            <dg:DataGridColumn Title="Estado" PropertyName="EstadoGuia.DescripcionEstadoGuia"/>
-                                            <dg:DataGridColumn Title="Motivo" PropertyName="Motivo.DescripcionFinalMotivo"/>
-                                            <dg:DataGridColumn Title="Fecha" PropertyName="EstadoGuia.DescripcionFechaGrabacion"/>
-                                        </dg:DataGrid.Columns>
-                                        <dg:DataGrid.RowsBackgroundColorPalette>
-                                            <dg:PaletteCollection>
-                                                <Color>#F2F2F2</Color>
-                                                <Color>#FFFFFF</Color>
-                                            </dg:PaletteCollection>
-                                        </dg:DataGrid.RowsBackgroundColorPalette>
-                                    </dg:DataGrid>
-                                </accordion:AccordionItemView.ItemContent>
-                            </accordion:AccordionItemView>
-                            <accordion:AccordionItemView Text="Telemercadeo" IsVisible="{Binding TelemercadeoVisible}">
-                                <accordion:AccordionItemView.ItemContent>
-                                    <repeater:RepeaterView Margin="0.5,0,0.5,0.5" ShowSeparator="true" SeparatorHeight="2" SeparatorColor="Silver"
+                                            <dg:DataGrid.HeaderFontSize>
+                                                <OnIdiom  x:TypeArguments="x:Double">
+                                                    <OnIdiom.Tablet>11</OnIdiom.Tablet>
+                                                    <OnIdiom.Phone>9</OnIdiom.Phone>
+                                                </OnIdiom>
+                                            </dg:DataGrid.HeaderFontSize>
+                                            <dg:DataGrid.Columns>
+                                                <dg:DataGridColumn Title="Ciudad" PropertyName="EstadoGuia.Ciudad"/>
+                                                <dg:DataGridColumn Title="Estado" PropertyName="EstadoGuia.DescripcionEstadoGuia"/>
+                                                <dg:DataGridColumn Title="Motivo" PropertyName="Motivo.DescripcionFinalMotivo"/>
+                                                <dg:DataGridColumn Title="Fecha" PropertyName="EstadoGuia.DescripcionFechaGrabacion"/>
+                                            </dg:DataGrid.Columns>
+                                            <dg:DataGrid.RowsBackgroundColorPalette>
+                                                <dg:PaletteCollection>
+                                                    <Color>#F2F2F2</Color>
+                                                    <Color>#FFFFFF</Color>
+                                                </dg:PaletteCollection>
+                                            </dg:DataGrid.RowsBackgroundColorPalette>
+                                        </dg:DataGrid>
+                                    </accordion:AccordionItemView.ItemContent>
+                                </accordion:AccordionItemView>
+                                <accordion:AccordionItemView Text="Telemercadeo" IsVisible="{Binding TelemercadeoVisible}">
+                                    <accordion:AccordionItemView.ItemContent>
+                                        <repeater:RepeaterView Margin="0.5,0,0.5,4" ShowSeparator="true" SeparatorHeight="2" SeparatorColor="Silver"
                                                                ItemsSource="{Binding Telemercadeos}" ItemTemplate="{StaticResource ItemDatos}">
-                                    </repeater:RepeaterView>
-                                </accordion:AccordionItemView.ItemContent>
-                            </accordion:AccordionItemView>
-                            <accordion:AccordionItemView Text="Intentos fallidos de entrega" IsVisible="{Binding FallidosVisible}">
-                                <accordion:AccordionItemView.ItemContent>
-                                    <repeater:RepeaterView Margin="0.5,0,0.5,0.5" ShowSeparator="true" SeparatorHeight="2" SeparatorColor="Silver"
+                                        </repeater:RepeaterView>
+                                    </accordion:AccordionItemView.ItemContent>
+                                </accordion:AccordionItemView>
+                                <accordion:AccordionItemView Text="Intentos fallidos de entrega" IsVisible="{Binding FallidosVisible}">
+                                    <accordion:AccordionItemView.ItemContent>
+                                        <repeater:RepeaterView Margin="0.5,0,0.5,4" ShowSeparator="true" SeparatorHeight="2" SeparatorColor="Silver"
                                                                ItemsSource="{Binding ImagesFallidos}" ItemTemplate="{StaticResource ItemImagen}">
-                                    </repeater:RepeaterView>
-                                </accordion:AccordionItemView.ItemContent>
-                            </accordion:AccordionItemView>
-                            <accordion:AccordionItemView Text="Novedades de transporte" IsVisible="{Binding NovedadesTransporteVisible}">
-                                <accordion:AccordionItemView.ItemContent>
-                                    <dg:DataGrid Margin="0.5,5,0.5,1" ItemsSource="{Binding NovedadesTransporte}" HeaderTextColor="White" BorderColor="#f8f8ff" BorderThickness="1" 
+                                        </repeater:RepeaterView>
+                                    </accordion:AccordionItemView.ItemContent>
+                                </accordion:AccordionItemView>
+                                <accordion:AccordionItemView Text="Novedades de transporte" IsVisible="{Binding NovedadesTransporteVisible}">
+                                    <accordion:AccordionItemView.ItemContent>
+                                        <dg:DataGrid Margin="0.5,5,0.5,4" ItemsSource="{Binding NovedadesTransporte}" HeaderTextColor="White" BorderColor="#f8f8ff" BorderThickness="1" 
                                                      HeaderBackground="#000F19" FontSize="9" IsSortable="False" SelectionEnabled="False">
-                                        <dg:DataGrid.HeaderFontSize>
-                                            <OnIdiom  x:TypeArguments="x:Double">
-                                                <OnIdiom.Tablet>11</OnIdiom.Tablet>
-                                                <OnIdiom.Phone>9</OnIdiom.Phone>
-                                            </OnIdiom>
-                                        </dg:DataGrid.HeaderFontSize>
-                                        <dg:DataGrid.Columns>
-                                            <dg:DataGridColumn Title="Tipo Novedad" PropertyName="NombreNovedad"/>
-                                            <dg:DataGridColumn Title="Lugar de incidencia" PropertyName="LugarIncidente"/>
-                                            <dg:DataGridColumn Title="Descripción" PropertyName="Descripcion"  Width="*"/>
-                                            <dg:DataGridColumn Title="Fecha del incidente" PropertyName="DescripcionFechaNovedad"/>
-                                            <dg:DataGridColumn Title="Tiempo de duración" PropertyName="Tiempo" />
-                                            <dg:DataGridColumn Title="Nueva fecha estimada de entrega" PropertyName="DescripcionFechaEstimadaEntrega" />
-                                        </dg:DataGrid.Columns>
-                                        <dg:DataGrid.RowsBackgroundColorPalette>
-                                            <dg:PaletteCollection>
-                                                <Color>#F2F2F2</Color>
-                                                <Color>#FFFFFF</Color>
-                                            </dg:PaletteCollection>
-                                        </dg:DataGrid.RowsBackgroundColorPalette>
-                                    </dg:DataGrid>
-                                </accordion:AccordionItemView.ItemContent>
-                            </accordion:AccordionItemView>
-                            <accordion:AccordionItemView Text="Datos del Envío">
-                                <accordion:AccordionItemView.ItemContent>
-                                    <Grid Margin="0.5,5,0.5,1" HorizontalOptions="Center">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="150"/>
-                                            <ColumnDefinition Width="*"/>
-                                        </Grid.ColumnDefinitions>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                        </Grid.RowDefinitions>
-                                        <Label Text="Fecha Admisión:" HorizontalTextAlignment="End" FontAttributes="Bold"/>
-                                        <Label Text="{Binding Guia.DescripcionFechaAdmision}"  Grid.Column="1" />
-                                        <Label Text="Nueva Fecha Estimada de Entrega:" Grid.Row="1" IsVisible="{Binding NoSispostal}" HorizontalTextAlignment="End" FontAttributes="Bold"/>
-                                        <Label Text="{Binding Guia.DescripcionFechaEstimadaEntregaNew}" IsVisible="{Binding NoSispostal}"  Grid.Row="1" Grid.Column="1"/>
-                                        <Label Text="Número Guía DHL:" HorizontalTextAlignment="End" IsVisible="{Binding IsDHL}" Grid.Row="2"  FontAttributes="Bold"/>
-                                        <Label Text="{Binding Guia.NumeroGuiaDHL}" Grid.Row="2" Grid.Column="1" IsVisible="{Binding IsDHL}"/>
-                                        <Label Text="Nombre Servicio:" HorizontalTextAlignment="End" Grid.Row="3"  FontAttributes="Bold"/>
-                                        <Label Text="{Binding Guia.NombreServicio}" Grid.Row="3" Grid.Column="1"/>
-                                        <Label Text="Tipo Envío:" Grid.Row="4" HorizontalTextAlignment="End"  FontAttributes="Bold"/>
-                                        <Label Text="{Binding Guia.NombreTipoEnvio}"  Grid.Row="4" Grid.Column="1"/>
-                                        <Label Text="Peso:" Grid.Row="5"  FontAttributes="Bold" HorizontalTextAlignment="End"/>
-                                        <Label Text="{Binding Guia.Peso}" Grid.Row="5" Grid.Column="1"/>
-                                        <Label Text="Dice Contener:" Grid.Row="6"  FontAttributes="Bold" HorizontalTextAlignment="End"/>
-                                        <Label Text="{Binding Guia.DiceContener}" Grid.Row="6" Grid.Column="1"/>
-                                        <Label Text="Ciudad Gestión Envío:" Grid.Row="7"  FontAttributes="Bold" HorizontalTextAlignment="End"/>
-                                        <Label Text="{Binding Guia.NombreCiudadOrigen}" Grid.Row="7" Grid.Column="1"/>
-                                        <Label Text="Ciudad Gestión Envío:" Grid.Row="8"  FontAttributes="Bold" HorizontalTextAlignment="End"/>
-                                        <Label Text="{Binding Guia.NombreCiudadOrigen}" Grid.Row="8" Grid.Column="1"/>
-                                        <Label Text="Valor del Transporte:" Grid.Row="9" IsVisible="{Binding NoCredito}" FontAttributes="Bold" HorizontalTextAlignment="End"/>
-                                        <Label Text="{Binding Guia.ValorAdmision, StringFormat='{0:C}'}" IsVisible="{Binding NoCredito}" Grid.Row="9" Grid.Column="1" />
-                                        <Label Text="Valor Sobre Flete:" Grid.Row="10" IsVisible="{Binding NoCredito}" FontAttributes="Bold" HorizontalTextAlignment="End"/>
-                                        <Label Text="{Binding Guia.ValorPrimaSeguro, StringFormat='{0:C}'}" IsVisible="{Binding NoCredito}" Grid.Row="10" Grid.Column="1"/>
-                                        <Label Text="Valor Otros Conceptos:" Grid.Row="11" IsVisible="{Binding NoCredito}" FontAttributes="Bold" HorizontalTextAlignment="End"/>
-                                        <Label Text="{Binding Guia.ValorAdicionales, StringFormat='{0:C}'}" IsVisible="{Binding NoCredito}" Grid.Row="11" Grid.Column="1"/>
-                                        <Label Text="Valor Total:" Grid.Row="12" IsVisible="{Binding NoCredito}" FontAttributes="Bold" HorizontalTextAlignment="End"/>
-                                        <Label Text="{Binding Guia.ValorTotal, StringFormat='{0:C}'}" IsVisible="{Binding NoCredito}" Grid.Row="12" Grid.Column="1"/>
-                                        <Label Text="Forma de Pago:" Grid.Row="13" IsVisible="{Binding NoCredito}" FontAttributes="Bold" HorizontalTextAlignment="End"/>
-                                        <Label Text="{Binding DescripcionFormaPago}" Grid.Row="13" Grid.Column="1"/>
-                                    </Grid>
-                                </accordion:AccordionItemView.ItemContent>
-                            </accordion:AccordionItemView>
-                            <accordion:AccordionItemView Text="Remitente">
-                                <accordion:AccordionItemView.ItemContent>
-                                    <Grid Margin="0.5,5,0.5,1" HorizontalOptions="Center">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="150"/>
-                                            <ColumnDefinition Width="*"/>
-                                        </Grid.ColumnDefinitions>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                        </Grid.RowDefinitions>
-                                        <Label Text="Ciudad Origen:" HorizontalTextAlignment="End" FontAttributes="Bold"/>
-                                        <Label Text="{Binding Guia.NombreCiudadOrigen}"  Grid.Column="1" />
-                                        <Label Text="Nombre Remitente:" Grid.Row="1" HorizontalTextAlignment="End" FontAttributes="Bold"/>
-                                        <Label Text="{Binding Guia.Remitente.Nombre}" Grid.Row="1"  Grid.Column="1" />
-                                        <Label Text="Dirección Remitente:" Grid.Row="2" HorizontalTextAlignment="End" FontAttributes="Bold"/>
-                                        <Label Text="{Binding Guia.Remitente.Direccion}" Grid.Row="2"  Grid.Column="1" />
-                                        <Label Text="Telefono Remitente:" Grid.Row="3" IsVisible="{Binding NoSispostal}" HorizontalTextAlignment="End" FontAttributes="Bold"/>
-                                        <Label Text="{Binding Guia.Remitente.Telefono}" IsVisible="{Binding NoSispostal}" Grid.Row="3"  Grid.Column="1" />
-                                        <Label Text="NIT:" Grid.Row="4" IsVisible="{Binding IsSispostal}" HorizontalTextAlignment="End" FontAttributes="Bold"/>
-                                        <Label Text="{Binding Guia.Remitente.Identificacion}" IsVisible="{Binding IsSispostal}" Grid.Row="4"  Grid.Column="1" />
-                                    </Grid>
-                                </accordion:AccordionItemView.ItemContent>
-                            </accordion:AccordionItemView>
-                            <accordion:AccordionItemView Text="Destinatario">
-                                <accordion:AccordionItemView.ItemContent>
-                                    <Grid Margin="0.5,5,0.5,1" HorizontalOptions="Center">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="150"/>
-                                            <ColumnDefinition Width="*"/>
-                                        </Grid.ColumnDefinitions>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                        </Grid.RowDefinitions>
-                                        <Label Text="Ciudad Destino:" HorizontalTextAlignment="End" FontAttributes="Bold"/>
-                                        <Label Text="{Binding Guia.NombreCiudadDestino}"  Grid.Column="1" />
-                                        <Label Text="Nombre Destinatario:" Grid.Row="1" HorizontalTextAlignment="End" FontAttributes="Bold"/>
-                                        <Label Text="{Binding Guia.Destinatario.Nombre}" Grid.Row="1"  Grid.Column="1" />
-                                        <Label Text="Dirección Destinatario:" Grid.Row="2" HorizontalTextAlignment="End" FontAttributes="Bold"/>
-                                        <Label Text="{Binding Guia.Destinatario.Direccion}" Grid.Row="2"  Grid.Column="1" />
-                                        <Label Text="Telefono Destinatario:" Grid.Row="3" HorizontalTextAlignment="End" FontAttributes="Bold"/>
-                                        <Label Text="{Binding Guia.Destinatario.Telefono}" Grid.Row="3"  Grid.Column="1" />
-                                    </Grid>
-                                </accordion:AccordionItemView.ItemContent>
-                            </accordion:AccordionItemView>
-                        </accordion:AccordionView.Children>
-                    </accordion:AccordionView>
-                </Grid>
-                <BoxView Grid.Row="3" HeightRequest="1" Margin="0,5,0,5" BackgroundColor="{StaticResource naranja}" HorizontalOptions="FillAndExpand" />
-                <StackLayout Grid.Row="4" Orientation="Horizontal" HorizontalOptions="Center">
-                    <Label Text="Imagen de Prueba Entrega" FontSize="Large" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
-                    <Image x:Name="Compartir" Source="shareV.png" />
-                </StackLayout>
-                <StackLayout Grid.Row="5" HorizontalOptions="Center">
-                    <Label Text="Toca dos veces la imagen para habilitar el zoom"  HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
-                    <ContentView Margin="0.5,0,0.5,0.5">
-                        <repeater:RepeaterView Margin="0.5,0,0.5,0.5" ShowSeparator="true" SeparatorHeight="2" SeparatorColor="Silver"
+                                            <dg:DataGrid.HeaderFontSize>
+                                                <OnIdiom  x:TypeArguments="x:Double">
+                                                    <OnIdiom.Tablet>11</OnIdiom.Tablet>
+                                                    <OnIdiom.Phone>9</OnIdiom.Phone>
+                                                </OnIdiom>
+                                            </dg:DataGrid.HeaderFontSize>
+                                            <dg:DataGrid.Columns>
+                                                <dg:DataGridColumn Title="Tipo Novedad" PropertyName="NombreNovedad"/>
+                                                <dg:DataGridColumn Title="Lugar de incidencia" PropertyName="LugarIncidente"/>
+                                                <dg:DataGridColumn Title="Descripción" PropertyName="Descripcion"  Width="*"/>
+                                                <dg:DataGridColumn Title="Fecha del incidente" PropertyName="DescripcionFechaNovedad"/>
+                                                <dg:DataGridColumn Title="Tiempo de duración" PropertyName="Tiempo" />
+                                                <dg:DataGridColumn Title="Nueva fecha estimada de entrega" PropertyName="DescripcionFechaEstimadaEntrega" />
+                                            </dg:DataGrid.Columns>
+                                            <dg:DataGrid.RowsBackgroundColorPalette>
+                                                <dg:PaletteCollection>
+                                                    <Color>#F2F2F2</Color>
+                                                    <Color>#FFFFFF</Color>
+                                                </dg:PaletteCollection>
+                                            </dg:DataGrid.RowsBackgroundColorPalette>
+                                        </dg:DataGrid>
+                                    </accordion:AccordionItemView.ItemContent>
+                                </accordion:AccordionItemView>
+                                <accordion:AccordionItemView Text="Datos del Envío">
+                                    <accordion:AccordionItemView.ItemContent>
+                                        <Grid Margin="0.5,5,0.5,4" HorizontalOptions="Center">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="150"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="28"/>
+                                                <RowDefinition Height="28"/>
+                                                <RowDefinition Height="28"/>
+                                                <RowDefinition Height="28"/>
+                                                <RowDefinition Height="28"/>
+                                            </Grid.RowDefinitions>
+                                            <Label Text="Fecha Admisión:" HorizontalTextAlignment="End" FontAttributes="Bold"/>
+                                            <Label Text="{Binding Guia.DescripcionFechaAdmision}"  Grid.Column="1" />
+                                            <Label Text="Nueva Fecha Estimada de Entrega:" Grid.Row="1" IsVisible="{Binding NoSispostal}" HorizontalTextAlignment="End" FontAttributes="Bold"/>
+                                            <Label Text="{Binding Guia.DescripcionFechaEstimadaEntregaNew}" IsVisible="{Binding NoSispostal}"  Grid.Row="1" Grid.Column="1"/>
+                                            <Label Text="Número Guía DHL:" HorizontalTextAlignment="End" IsVisible="{Binding IsDHL}" Grid.Row="2"  FontAttributes="Bold"/>
+                                            <Label Text="{Binding Guia.NumeroGuiaDHL}" Grid.Row="2" Grid.Column="1" IsVisible="{Binding IsDHL}"/>
+                                            <Label Text="Nombre Servicio:" HorizontalTextAlignment="End" Grid.Row="3"  FontAttributes="Bold"/>
+                                            <Label Text="{Binding Guia.NombreServicio}" Grid.Row="3" Grid.Column="1"/>
+                                            <Label Text="Tipo Envío:" Grid.Row="4" HorizontalTextAlignment="End"  FontAttributes="Bold"/>
+                                            <Label Text="{Binding Guia.NombreTipoEnvio}"  Grid.Row="4" Grid.Column="1"/>
+                                            <Label Text="Peso:" Grid.Row="5"  FontAttributes="Bold" HorizontalTextAlignment="End"/>
+                                            <Label Text="{Binding Guia.Peso}" Grid.Row="5" Grid.Column="1"/>
+                                            <Label Text="Dice Contener:" Grid.Row="6"  FontAttributes="Bold" HorizontalTextAlignment="End"/>
+                                            <Label Text="{Binding Guia.DiceContener}" Grid.Row="6" Grid.Column="1"/>
+                                            <Label Text="Ciudad Gestión Envío:" Grid.Row="7"  FontAttributes="Bold" HorizontalTextAlignment="End"/>
+                                            <Label Text="{Binding Guia.NombreCiudadOrigen}" Grid.Row="7" Grid.Column="1"/>
+                                            <Label Text="Ciudad Gestión Envío:" Grid.Row="8"  FontAttributes="Bold" HorizontalTextAlignment="End"/>
+                                            <Label Text="{Binding Guia.NombreCiudadOrigen}" Grid.Row="8" Grid.Column="1"/>
+                                            <Label Text="Valor del Transporte:" Grid.Row="9" IsVisible="{Binding NoCredito}" FontAttributes="Bold" HorizontalTextAlignment="End"/>
+                                            <Label Text="{Binding Guia.ValorAdmision, StringFormat='{0:C}'}" IsVisible="{Binding NoCredito}" Grid.Row="9" Grid.Column="1" />
+                                            <Label Text="Valor Sobre Flete:" Grid.Row="10" IsVisible="{Binding NoCredito}" FontAttributes="Bold" HorizontalTextAlignment="End"/>
+                                            <Label Text="{Binding Guia.ValorPrimaSeguro, StringFormat='{0:C}'}" IsVisible="{Binding NoCredito}" Grid.Row="10" Grid.Column="1"/>
+                                            <Label Text="Valor Otros Conceptos:" Grid.Row="11" IsVisible="{Binding NoCredito}" FontAttributes="Bold" HorizontalTextAlignment="End"/>
+                                            <Label Text="{Binding Guia.ValorAdicionales, StringFormat='{0:C}'}" IsVisible="{Binding NoCredito}" Grid.Row="11" Grid.Column="1"/>
+                                            <Label Text="Valor Total:" Grid.Row="12" IsVisible="{Binding NoCredito}" FontAttributes="Bold" HorizontalTextAlignment="End"/>
+                                            <Label Text="{Binding Guia.ValorTotal, StringFormat='{0:C}'}" IsVisible="{Binding NoCredito}" Grid.Row="12" Grid.Column="1"/>
+                                            <Label Text="Forma de Pago:" Grid.Row="13" IsVisible="{Binding NoCredito}" FontAttributes="Bold" HorizontalTextAlignment="End"/>
+                                            <Label Text="{Binding DescripcionFormaPago}" Grid.Row="13" Grid.Column="1"/>
+                                        </Grid>
+                                    </accordion:AccordionItemView.ItemContent>
+                                </accordion:AccordionItemView>
+                                <accordion:AccordionItemView Text="Remitente">
+                                    <accordion:AccordionItemView.ItemContent>
+                                        <Grid Margin="0.5,5,0.5,4" HorizontalOptions="Center">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="150"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+                                            <Label Text="Ciudad Origen:" HorizontalTextAlignment="End" FontAttributes="Bold"/>
+                                            <Label Text="{Binding Guia.NombreCiudadOrigen}"  Grid.Column="1" />
+                                            <Label Text="Nombre Remitente:" Grid.Row="1" HorizontalTextAlignment="End" FontAttributes="Bold"/>
+                                            <Label Text="{Binding Guia.Remitente.Nombre}" Grid.Row="1"  Grid.Column="1" />
+                                            <Label Text="Dirección Remitente:" Grid.Row="2" HorizontalTextAlignment="End" FontAttributes="Bold"/>
+                                            <Label Text="{Binding Guia.Remitente.Direccion}" Grid.Row="2"  Grid.Column="1" />
+                                            <Label Text="Telefono Remitente:" Grid.Row="3" IsVisible="{Binding NoSispostal}" HorizontalTextAlignment="End" FontAttributes="Bold"/>
+                                            <Label Text="{Binding Guia.Remitente.Telefono}" IsVisible="{Binding NoSispostal}" Grid.Row="3"  Grid.Column="1" />
+                                            <Label Text="NIT:" Grid.Row="4" IsVisible="{Binding IsSispostal}" HorizontalTextAlignment="End" FontAttributes="Bold"/>
+                                            <Label Text="{Binding Guia.Remitente.Identificacion}" IsVisible="{Binding IsSispostal}" Grid.Row="4"  Grid.Column="1" />
+                                        </Grid>
+                                    </accordion:AccordionItemView.ItemContent>
+                                </accordion:AccordionItemView>
+                                <accordion:AccordionItemView Text="Destinatario">
+                                    <accordion:AccordionItemView.ItemContent>
+                                        <Grid Margin="0.5,5,0.5,4" HorizontalOptions="Center">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="120"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>                                                
+                                            </Grid.RowDefinitions>
+                                            <Label Text="Ciudad Destino:" HorizontalTextAlignment="End" FontAttributes="Bold"/>
+                                            <Label Text="{Binding Guia.NombreCiudadDestino}"  Grid.Column="1" />
+                                            <Label Text="Nombre Destinatario:" Grid.Row="1" HorizontalTextAlignment="End" FontAttributes="Bold"/>
+                                            <Label Text="{Binding Guia.Destinatario.Nombre}" Grid.Row="1"  Grid.Column="1" />
+                                            <Label Text="Dirección Destinatario:" Grid.Row="2" HorizontalTextAlignment="End" FontAttributes="Bold"/>
+                                            <Label Text="{Binding Guia.Destinatario.Direccion}" Grid.Row="2"  Grid.Column="1" />
+                                            <Label Text="Telefono Destinatario:" Grid.Row="3" HorizontalTextAlignment="End" FontAttributes="Bold"/>
+                                            <Label Text="{Binding Guia.Destinatario.Telefono}" Grid.Row="3"  Grid.Column="1" />                                            
+                                        </Grid>
+                                    </accordion:AccordionItemView.ItemContent>
+                                </accordion:AccordionItemView>
+                            </accordion:AccordionView.Children>
+                        </accordion:AccordionView>
+                        
+                    </Grid>
+                    <BoxView Grid.Row="3" HeightRequest="1" Margin="0,5,0,5" BackgroundColor="{StaticResource naranja}" HorizontalOptions="FillAndExpand" />
+                    <StackLayout Grid.Row="4" Orientation="Horizontal" HorizontalOptions="Center">
+                        <Label Text="Imagen de Prueba Entrega" FontSize="Large" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                        <Image x:Name="Compartir" Source="shareV.png" />
+                    </StackLayout>
+                    <StackLayout Grid.Row="5" HorizontalOptions="Center">
+                        <Label Text="Toca dos veces la imagen para habilitar el zoom"  HorizontalOptions="CenterAndExpand"/>
+                        <ContentView Margin="0.5,1,0.5,0.5">
+                            <repeater:RepeaterView Margin="0.5,0,0.5,0.5" ShowSeparator="true" SeparatorHeight="2" SeparatorColor="Silver"
                                                                ItemsSource="{Binding ImagesPruebaEntrega}" ItemTemplate="{StaticResource ItemImagen}">
-                        </repeater:RepeaterView>
-                    </ContentView>
-                </StackLayout>
+                            </repeater:RepeaterView>
+                        </ContentView>
+                    </StackLayout>
+                </Grid>
+                
+                <Label Grid.Row="3" HorizontalTextAlignment="Center" Text="Inter Rapidísimo S.A"/>
             </Grid>
         </ScrollView>
     </ContentPage.Content>

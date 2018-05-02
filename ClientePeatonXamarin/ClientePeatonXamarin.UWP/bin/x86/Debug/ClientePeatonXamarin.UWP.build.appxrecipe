@@ -624,9 +624,6 @@
       <PackagePath>Assets\LargeTile.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\Assets\MisRecogidas.png">
-      <PackagePath>Assets\MisRecogidas.png</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\Assets\SmallTile.scale-100.png">
       <PackagePath>Assets\SmallTile.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
@@ -687,9 +684,6 @@
       <PackagePath>Assets\StoreLogo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\btnokactivo.png">
-      <PackagePath>btnokactivo.png</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\buscar.png">
       <PackagePath>buscar.png</PackagePath>
     </AppxPackagedFile>
@@ -705,6 +699,30 @@
     <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\facebook.png">
       <PackagePath>facebook.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\FondoContacoComercial.png">
+      <PackagePath>FondoContacoComercial.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\FondoCotizaEnvio.png">
+      <PackagePath>FondoCotizaEnvio.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\FondoLogin.png">
+      <PackagePath>FondoLogin.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\FondoMisRecogidas.png">
+      <PackagePath>FondoMisRecogidas.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\FondoSigueTuEnvio.png">
+      <PackagePath>FondoSigueTuEnvio.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\FondoSolicitaRecogida.png">
+      <PackagePath>FondoSolicitaRecogida.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\FondoUbicaTuOficina.png">
+      <PackagePath>FondoUbicaTuOficina.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\icon.png">
+      <PackagePath>icon.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\instagram.png">
       <PackagePath>instagram.png</PackagePath>
     </AppxPackagedFile>
@@ -717,11 +735,23 @@
     <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\Item.png">
       <PackagePath>Item.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\LineaNaranja.png">
+      <PackagePath>LineaNaranja.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\logoInter.png">
+      <PackagePath>logoInter.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\markerMapSmall.png">
+      <PackagePath>markerMapSmall.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\MisRecogidas.png">
       <PackagePath>MisRecogidas.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\Assets\MiUbicacion.png">
       <PackagePath>Assets\MiUbicacion.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\MiUbicacion.png">
+      <PackagePath>MiUbicacion.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\newcotizar.png">
       <PackagePath>newcotizar.png</PackagePath>
@@ -862,14 +892,20 @@
       <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\SelectCodigoBarras.png">
+      <PackagePath>SelectCodigoBarras.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\SelectCodigoBarrasNanranja.png">
+      <PackagePath>SelectCodigoBarrasNanranja.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\shareV.png">
       <PackagePath>shareV.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\splashscreen.png">
+      <PackagePath>splashscreen.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\twitter.png">
       <PackagePath>twitter.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\backgroundhome.jpg">
-      <PackagePath>backgroundhome.jpg</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>

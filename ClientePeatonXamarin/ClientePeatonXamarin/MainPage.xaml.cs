@@ -16,9 +16,20 @@ namespace ClientePeatonXamarin
             if (Application.Current.Properties.ContainsKey("Puntos"))
                 Application.Current.Properties.Remove("Puntos");
 
-            InitializeComponent();                        
+            InitializeComponent();
             InicializarEnlaces();
             ConsultarPuntos();
+        }
+
+        protected override void OnSizeAllocated(double width, double height)
+        {
+            base.OnSizeAllocated(width, height);
+
+            MainViewModel vm = this.BindingContext as MainViewModel;
+            if (height < 380)
+                vm.VerOpciones = false;
+            else
+                vm.VerOpciones = true;
         }
 
         private async void ConsultarPuntos()

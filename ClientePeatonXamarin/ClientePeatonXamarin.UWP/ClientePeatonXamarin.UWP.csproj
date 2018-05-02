@@ -125,20 +125,30 @@
     <Content Include="Assets\StoreLogo.scale-150.png" />
     <Content Include="Assets\StoreLogo.scale-200.png" />
     <Content Include="Assets\StoreLogo.scale-400.png" />
-    <Content Include="backgroundhome.jpg" />
-    <AndroidResource Include="backgroundhome2.png" />
-    <Content Include="btnokactivo.png" />
+    <AndroidResource Include="btnokactivo.png" />
     <Content Include="buscar.png" />
     <Content Include="capturaguianara.png" />
     <Content Include="codigobarrahome.png" />
     <Content Include="cotizaactivonew.png" />
     <Content Include="facebook.png" />
+    <Content Include="FondoContacoComercial.png" />
+    <Content Include="FondoCotizaEnvio.png" />
+    <Content Include="FondoLogin.png" />
+    <Content Include="FondoMisRecogidas.png" />
+    <Content Include="FondoSigueTuEnvio.png" />
+    <Content Include="FondoSolicitaRecogida.png" />
+    <Content Include="FondoUbicaTuOficina.png" />
+    <Content Include="icon.png" />
     <Content Include="instagram.png" />
     <Content Include="interpoint.png" />
     <Content Include="Assets\markerMapSmall.png" />
     <Content Include="Item.png" />
+    <Content Include="LineaNaranja.png" />
+    <Content Include="logoInter.png" />
+    <Content Include="markerMapSmall.png" />
     <Content Include="MisRecogidas.png" />
     <Content Include="Assets\MiUbicacion.png" />
+    <Content Include="MiUbicacion.png" />
     <Content Include="newcotizar.png" />
     <Content Include="newcubicar.png" />
     <Content Include="newestudiofranquicia.png" />
@@ -178,7 +188,10 @@
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="SelectCodigoBarras.png" />
+    <Content Include="SelectCodigoBarrasNanranja.png" />
     <Content Include="shareV.png" />
+    <Content Include="splashscreen.png" />
     <Content Include="twitter.png" />
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClientePeatonXamarin.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
@@ -20,9 +21,8 @@ namespace ClientePeatonXamarin.ViewModels
         }
 
         public ViewModelBase()
-        {
-
-        }
+        {         
+        }        
 
         public ViewModelBase(INavigation _navegacion)
         {

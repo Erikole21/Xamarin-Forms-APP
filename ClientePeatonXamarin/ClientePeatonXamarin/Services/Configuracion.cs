@@ -7,10 +7,15 @@ namespace ClientePeatonXamarin.Services
 {
     public static class Configuracion
     {
+        //Pruebas
+        public static string BaseServicioInterUrl = "http://190.60.249.210/ApiServiciosInterPruebas/api/";
+        public static string BaseServicioSeguridadInterUrl = "http://190.60.249.210/ApiSeguridadPruebas/api/";
+        public static string BaseServicioRapsUrl = "http://190.60.249.210/ServicioRaps/api/";
 
-        public static string BaseServicioInterUrl = "http://172.16.129.28/ServiciosInter.Api/api/";
-        public static string BaseServicioSeguridadInterUrl = "http://172.16.129.28/WebApi.Seguridad/api/";
-        public static string BaseServicioRapsUrl = "http://172.16.129.28/CO.Servidor.Servicios.RapsWebApi/api/";        
+        //Desarrollo
+        //public static string BaseServicioInterUrl = "http://172.16.129.28/ServiciosInter.Api/api/";
+        //public static string BaseServicioSeguridadInterUrl = "http://172.16.129.28/WebApi.Seguridad/api/";
+        //public static string BaseServicioRapsUrl = "http://172.16.129.28/CO.Servidor.Servicios.RapsWebApi/api/";        
 
         public static int TiempoMensaje = 4000;
 

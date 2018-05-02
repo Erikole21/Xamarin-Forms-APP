@@ -7,7 +7,7 @@
       "scale": "2x",
       "size": "640x960",
       "idiom": "iphone",
-      "filename": "Webp.net-resizeimage1.png"
+      "filename": "Default@2x.png"
     },
     {
       "orientation": "portrait",
@@ -17,7 +17,7 @@
       "scale": "2x",
       "size": "640x1136",
       "idiom": "iphone",
-      "filename": "Webp.net-resizeimage2.png"
+      "filename": "Default-568h@2x.png"
     },
     {
       "orientation": "portrait",
@@ -26,7 +26,7 @@
       "scale": "1x",
       "size": "768x1024",
       "idiom": "ipad",
-      "filename": "Webp.net-resizeimage3.png"
+      "filename": "Default-Portrait.png"
     },
     {
       "orientation": "landscape",
@@ -44,7 +44,7 @@
       "scale": "2x",
       "size": "1536x2048",
       "idiom": "ipad",
-      "filename": "Webp.net-resizeimage4.png"
+      "filename": "Default-Portrait@2x.png"
     },
     {
       "orientation": "landscape",

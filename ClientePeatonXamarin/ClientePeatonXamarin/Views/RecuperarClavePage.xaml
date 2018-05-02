@@ -2,58 +2,72 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:ClientePeatonXamarin.Code"
-             x:Class="ClientePeatonXamarin.Views.RecuperarClavePage" Title="Recuperar Acceso">
+             x:Class="ClientePeatonXamarin.Views.RecuperarClavePage" Title="Recordar Acceso">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
-                <Entry Placeholder="Ingrese número de cédula o NIT" Margin="5" Text="{Binding Usuario,Mode=TwoWay}" Keyboard="Numeric">
-                    <Entry.Behaviors>
-                        <local:ObligatorioBehavior ButtonValida="{x:Reference Name=ContinuarButton}" LongitudMaxima="11"  />
-                    </Entry.Behaviors>
-                </Entry>
-                <Button x:Name="ContinuarButton" Text="Continuar" Margin="5,1,5,1" Command="{Binding ValidarComand}" TextColor="{StaticResource primary-title-color}" BackgroundColor="{StaticResource naranja}"/>
-                <BoxView HeightRequest="1" BackgroundColor="{StaticResource naranja}" HorizontalOptions="FillAndExpand" />
-                <Grid Margin="8" IsVisible="{Binding OpcionesRecuperaVisible}">
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition Width="60"/>
-                    </Grid.ColumnDefinitions>
-                    <Label Grid.ColumnSpan="2" Text="Recibiras un Pin a través de :" FontAttributes="Bold"/>
-                    <Label Grid.Row="1" Text="{Binding TextoEmail}"/>
-                    <Switch Grid.Row="1" Grid.Column="1" IsToggled="{Binding Correo,Mode=TwoWay}"/>
-                    <Label Grid.Row="2" Text="{Binding TextoMensaje}"/>
-                    <Switch Grid.Column="1" Grid.Row="2" IsToggled="{Binding MensajeTexto,Mode=TwoWay}"/>
-                    <Button Grid.Row="3" Grid.ColumnSpan="2" Text="Enviar" Command="{Binding EnviarComand}"
-                        TextColor="{StaticResource primary-title-color}" BackgroundColor="{StaticResource naranja}"/>
-                </Grid>
-                <BoxView HeightRequest="1" BackgroundColor="{StaticResource naranja}" HorizontalOptions="FillAndExpand" />
-                <StackLayout Margin="8" IsVisible="{Binding OpcionesRestablecerVisible}">
-                    <Label Text="{Binding Usuario}" FontAttributes="Bold"/>
-                    <Entry IsPassword="True" Placeholder="Asigna tu nueva clave.." Text="{Binding NuevaClave,Mode=TwoWay}">
+            <Grid ColumnSpacing="0" RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="168"/>
+                    <RowDefinition Height="48"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="20"/>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Aspect="AspectFill" Source="FondoLogin.png"/>
+                <Image Source="logoInter.png" HeightRequest="60" VerticalOptions="Start"/>
+                <Image Source="LineaNaranja.png" VerticalOptions="Start"/>
+                <Label Text="RECORDAR ACCESO" VerticalTextAlignment="End" Margin="15" FontSize="Medium" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="White"/>
+                <Image Grid.Row="1" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" Source="SelectCodigoBarrasNanranja.png" HeightRequest="10" WidthRequest="40"/>
+                <StackLayout Grid.Row="2">
+                    <Entry Placeholder="Ingrese número de cédula o NIT" Margin="5" Text="{Binding Usuario,Mode=TwoWay}" Keyboard="Numeric">
                         <Entry.Behaviors>
-                            <local:ObligatorioBehavior LongitudMaxima="11" ButtonValida="{x:Reference Name=CambiarClaveButton}"/>
+                            <local:ObligatorioBehavior ButtonValida="{x:Reference Name=ContinuarButton}" LongitudMaxima="11"  />
                         </Entry.Behaviors>
                     </Entry>
-                    <Entry IsPassword="True" Placeholder="Confirma tu nueva clave.." Text="{Binding ConfirmarClave,Mode=TwoWay}">
-                        <Entry.Behaviors>
-                            <local:ObligatorioBehavior LongitudMaxima="11" ButtonValida="{x:Reference Name=CambiarClaveButton}"/>
-                        </Entry.Behaviors>
-                    </Entry>
-                    <Entry Keyboard="Numeric" Placeholder="Ingresa el pin de Confirmación.." Text="{Binding PingConfirmacion,Mode=TwoWay}">
-                        <Entry.Behaviors>
-                            <local:ObligatorioBehavior LongitudMaxima="11" ButtonValida="{x:Reference Name=CambiarClaveButton}"/>
-                        </Entry.Behaviors>
-                    </Entry>
-                    <Button x:Name="CambiarClaveButton" Grid.Row="3" Grid.ColumnSpan="2" Text="Confirmar"  Command="{Binding CambiarClaveComand}"
-                        TextColor="{StaticResource primary-title-color}" BackgroundColor="{StaticResource naranja}"/>
+                    <Button x:Name="ContinuarButton" Text="Continuar"  Command="{Binding ValidarComand}" Margin="20,1,20,1" TextColor="White" BackgroundColor="{StaticResource primary-back-title-color}"/>
+                    <BoxView IsVisible="{Binding OpcionesRecuperaVisible}" HeightRequest="1" BackgroundColor="{StaticResource naranja}" HorizontalOptions="FillAndExpand" />
+                    <Grid Margin="8" IsVisible="{Binding OpcionesRecuperaVisible}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="60"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.ColumnSpan="2" Text="Recibiras un Pin a través de :" FontAttributes="Bold"/>
+                        <Label Grid.Row="1" Text="{Binding TextoEmail}"/>
+                        <Switch Grid.Row="1" Grid.Column="1" IsToggled="{Binding Correo,Mode=TwoWay}"/>
+                        <Label Grid.Row="2" Text="{Binding TextoMensaje}"/>
+                        <Switch Grid.Column="1" Grid.Row="2" IsToggled="{Binding MensajeTexto,Mode=TwoWay}"/>
+                        <Button Grid.Row="3" Grid.ColumnSpan="2" Text="Enviar" Command="{Binding EnviarComand}"
+                            Margin="20,5,20,5" TextColor="White" BackgroundColor="{StaticResource primary-back-title-color}"/>
+                    </Grid>
+                    <BoxView HeightRequest="1" IsVisible="{Binding OpcionesRestablecerVisible}" BackgroundColor="{StaticResource naranja}" HorizontalOptions="FillAndExpand" />
+                    <StackLayout Margin="8" IsVisible="{Binding OpcionesRestablecerVisible}">
+                        <Label Text="{Binding Usuario}" FontAttributes="Bold"/>
+                        <Entry IsPassword="True" Placeholder="Asigna tu nueva clave.." Text="{Binding NuevaClave,Mode=TwoWay}">
+                            <Entry.Behaviors>
+                                <local:ObligatorioBehavior LongitudMaxima="11" ButtonValida="{x:Reference Name=CambiarClaveButton}"/>
+                            </Entry.Behaviors>
+                        </Entry>
+                        <Entry IsPassword="True" Placeholder="Confirma tu nueva clave.." Text="{Binding ConfirmarClave,Mode=TwoWay}">
+                            <Entry.Behaviors>
+                                <local:ObligatorioBehavior LongitudMaxima="11" ButtonValida="{x:Reference Name=CambiarClaveButton}"/>
+                            </Entry.Behaviors>
+                        </Entry>
+                        <Entry Keyboard="Numeric" Placeholder="Ingresa el pin de Confirmación.." Text="{Binding PingConfirmacion,Mode=TwoWay}">
+                            <Entry.Behaviors>
+                                <local:ObligatorioBehavior LongitudMaxima="11" ButtonValida="{x:Reference Name=CambiarClaveButton}"/>
+                            </Entry.Behaviors>
+                        </Entry>
+                        <Button x:Name="CambiarClaveButton" Grid.Row="3" Grid.ColumnSpan="2" Text="Confirmar"  Command="{Binding CambiarClaveComand}"
+                            Margin="20,5,20,5" TextColor="White" BackgroundColor="{StaticResource primary-back-title-color}"/>
+                    </StackLayout>
                 </StackLayout>
-            </StackLayout>
+                <Label Grid.Row="3" HorizontalTextAlignment="Center" Text="Inter Rapidísimo S.A"/>
+            </Grid>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

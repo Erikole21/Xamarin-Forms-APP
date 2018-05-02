@@ -5,84 +5,99 @@
              xmlns:local="clr-namespace:ClientePeatonXamarin.Code"                          
              xmlns:autocomplete="clr-namespace:ClientePeatonXamarin.Controls;assembly=ClientePeatonXamarin"
              x:Class="ClientePeatonXamarin.Views.CotizadorPage"
-             Title="Cotizador">   
+             Title="Cotizador">
     <ContentPage.Content>
         <ScrollView x:Name="Scroll">
-            <StackLayout Margin="5">
-                <StackLayout Orientation="Horizontal" Margin="0" HorizontalOptions="CenterAndExpand">
-                    <Label Text="Fecha cotización:" FontSize="Medium" FontAttributes="Bold"/>
-                    <Label Text="{Binding FechaEntrega}" FontSize="Medium" FontAttributes="Bold"/>
-                </StackLayout>
-                <Label Text="{Binding NumeroPiezas,Mode=TwoWay}" FontSize="Medium"/>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition Width="30"/>
-                    </Grid.ColumnDefinitions>
-                    <Entry Text="{Binding PesoFisico,Mode=TwoWay}" Placeholder="Ingrese Peso Aprox. Kg." HorizontalOptions="FillAndExpand"   Unfocused="CalcularValorComercialPorPeso" Keyboard="Numeric">
-                        <Entry.Behaviors>
-                            <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" IsNumerico="True" ValorMaximo="999999"/>
-                        </Entry.Behaviors>
-                    </Entry>
-                    <Image x:Name="cubicar" Source="newcubicar.png"  Grid.Column="1" WidthRequest="30" HeightRequest="30"/>
-                </Grid>
+            <Grid ColumnSpacing="0" RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="168"/>
+                    <RowDefinition Height="48"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="20"/>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Aspect="AspectFill" Source="FondoCotizaEnvio.png"/>
+                <Image Source="logoInter.png" HeightRequest="60" VerticalOptions="Start"/>
+                <Image Source="LineaNaranja.png" VerticalOptions="Start"/>
+                <Label Text="COTIZA TU ENVÍO" VerticalTextAlignment="End" Margin="15" FontSize="Medium" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="White"/>
+                <Image Grid.Row="1" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" Source="SelectCodigoBarrasNanranja.png" HeightRequest="10" WidthRequest="40"/>
+                <StackLayout Grid.Row="2" Margin="5">
+                    <StackLayout Orientation="Horizontal" Margin="0" HorizontalOptions="CenterAndExpand">
+                        <Label Text="Fecha cotización:" FontSize="Medium" FontAttributes="Bold"/>
+                        <Label Text="{Binding FechaEntrega}" FontSize="Medium" FontAttributes="Bold"/>
+                    </StackLayout>
+                    <Label Margin="5,0" Text="{Binding NumeroPiezas,Mode=TwoWay}" FontSize="Medium"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+                        <Entry Text="{Binding PesoFisico,Mode=TwoWay}" Placeholder="Ingrese Peso Aprox. Kg." HorizontalOptions="FillAndExpand"   Unfocused="CalcularValorComercialPorPeso" Keyboard="Numeric">
+                            <Entry.Behaviors>
+                                <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" IsNumerico="True" ValorMaximo="999999"/>
+                            </Entry.Behaviors>
+                        </Entry>
+                        <Image x:Name="cubicar" Source="newcubicar.png"  Grid.Column="1" WidthRequest="100" HeightRequest="30"/>
+                    </Grid>
 
-                <Entry Text="{Binding PesoVolumetrico,Mode=TwoWay}" Placeholder="Ingrese Peso Volumétrico Aprox Kg." HorizontalOptions="FillAndExpand" Keyboard="Numeric"></Entry>
-                <Entry Text="{Binding ValorComercial,Mode=TwoWay,StringFormat='{0:C}'}" Placeholder="Ingrese Valor Comercial" HorizontalOptions="FillAndExpand" TextChanged="CargarValorComercialPorPeso" Keyboard="Numeric">
-                </Entry>
-                <autocomplete:AutoCompleteView Padding="3" SuggestionPlacement="Top" OnSuggestionOpen="Handle_OnSuggestionOpen" OpenOnFocus="true"
+                    <Entry Text="{Binding PesoVolumetrico,Mode=TwoWay}" Placeholder="Ingrese Peso Volumétrico Aprox Kg." HorizontalOptions="FillAndExpand" Keyboard="Numeric"></Entry>
+                    <Entry Text="{Binding ValorComercial,Mode=TwoWay,StringFormat='{0:C}'}" Placeholder="Ingrese Valor Comercial" HorizontalOptions="FillAndExpand" TextChanged="CargarValorComercialPorPeso" Keyboard="Numeric">
+                    </Entry>
+                    <autocomplete:AutoCompleteView Padding="3" SuggestionPlacement="Top" OnSuggestionOpen="Handle_OnSuggestionOpen" OpenOnFocus="true"
                                                Placeholder="Ciudad origen..." ItemsSource="{Binding Ciudades}" ShowSeparator="False"
                                                SearchMember="Nombre" MaxResults="3" SelectedItem="{Binding SelectCiudadesOrigen}" ItemTemplate="{StaticResource ItemCiudad}">
-                </autocomplete:AutoCompleteView>
-                <autocomplete:AutoCompleteView Padding="3" SuggestionPlacement="Top" OnSuggestionOpen="Handle_OnSuggestionOpen" OpenOnFocus="true"
+                    </autocomplete:AutoCompleteView>
+                    <autocomplete:AutoCompleteView Padding="3" SuggestionPlacement="Top" OnSuggestionOpen="Handle_OnSuggestionOpen" OpenOnFocus="true"
                                                Placeholder="Ciudad destino" ItemsSource="{Binding Ciudades}" ShowSeparator="False"
                                                SearchMember="Nombre" MaxResults="3" SelectedItem="{Binding SelectCiudadesDestino}" ItemTemplate="{StaticResource ItemCiudad}">
-                </autocomplete:AutoCompleteView>
-                <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand"  HorizontalOptions="FillAndExpand"  >
-                    <Picker  Title="Seleccione tipo entrega" ItemsSource="{Binding TiposEntrega}" Margin="5" ItemDisplayBinding="{Binding label}" SelectedItem="{Binding SelectTiposEntrega,Mode=TwoWay}"  VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand"></Picker>
-                </StackLayout>
+                    </autocomplete:AutoCompleteView>
+                    <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand"  HorizontalOptions="FillAndExpand"  >
+                        <Picker  Title="Seleccione tipo entrega" ItemsSource="{Binding TiposEntrega}" Margin="5" ItemDisplayBinding="{Binding label}" SelectedItem="{Binding SelectTiposEntrega,Mode=TwoWay}"  VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand"></Picker>
+                    </StackLayout>
 
-                <Button x:Name="guardarButton" Text="Cotizar" Command="{Binding CotizarServicioCommand}" TextColor="{StaticResource primary-title-color}" BackgroundColor="{StaticResource naranja}"/>
+                    <Button x:Name="guardarButton" Text="Cotizar" Command="{Binding CotizarServicioCommand}" Margin="20,5,20,5" TextColor="White" BackgroundColor="{StaticResource primary-back-title-color}"/>
 
-                <StackLayout  Orientation="Horizontal" IsVisible="{Binding MuestraCotizacion}">
-                    <dg:DataGrid Margin="0.5,5,0.5,1" ItemsSource="{Binding Cotizaciones}" HeaderTextColor="White" BorderColor="#f8f8ff" BorderThickness="1"  
+                    <StackLayout  Orientation="Horizontal" IsVisible="{Binding MuestraCotizacion}">
+                        <dg:DataGrid Margin="0.5,5,0.5,1" ItemsSource="{Binding Cotizaciones}" HeaderTextColor="White" BorderColor="#f8f8ff" BorderThickness="1"  
                                                      HeaderBackground="#000F19" FontSize="9" IsSortable="False" SelectionEnabled="False">
-                        <dg:DataGrid.HeaderFontSize>
-                            <OnIdiom  x:TypeArguments="x:Double">
-                                <OnIdiom.Tablet>11</OnIdiom.Tablet>
-                                <OnIdiom.Phone>9</OnIdiom.Phone>
-                            </OnIdiom>
-                        </dg:DataGrid.HeaderFontSize>
-                        <dg:DataGrid.Columns>
-                            <dg:DataGridColumn Title="Servicio" PropertyName="NombreServicio"/>
-                            <dg:DataGridColumn Title="Fecha entrega" PropertyName="DescripcionFechaEntrega"/>
-                            <dg:DataGridColumn Title="Valor flete" PropertyName="Precio.Valor" StringFormat="{}{0:C}"/>
-                            <dg:DataGridColumn Title="Valor sobreflete" PropertyName="Precio.ValorPrimaSeguro" StringFormat="{}{0:C}"/>
-                            <dg:DataGridColumn Title="Valor total" PropertyName="Valortotal" StringFormat="{}{0:C}"/>
-                        </dg:DataGrid.Columns>
-                        <dg:DataGrid.RowsBackgroundColorPalette>
-                            <dg:PaletteCollection>
-                                <Color>#F2F2F2</Color>
-                                <Color>#FFFFFF</Color>
-                            </dg:PaletteCollection>
-                        </dg:DataGrid.RowsBackgroundColorPalette>
-                    </dg:DataGrid>
+                            <dg:DataGrid.HeaderFontSize>
+                                <OnIdiom  x:TypeArguments="x:Double">
+                                    <OnIdiom.Tablet>11</OnIdiom.Tablet>
+                                    <OnIdiom.Phone>9</OnIdiom.Phone>
+                                </OnIdiom>
+                            </dg:DataGrid.HeaderFontSize>
+                            <dg:DataGrid.Columns>
+                                <dg:DataGridColumn Title="Servicio" PropertyName="NombreServicio"/>
+                                <dg:DataGridColumn Title="Fecha entrega" PropertyName="DescripcionFechaEntrega"/>
+                                <dg:DataGridColumn Title="Valor flete" PropertyName="Precio.Valor" StringFormat="{}{0:C}"/>
+                                <dg:DataGridColumn Title="Valor sobreflete" PropertyName="Precio.ValorPrimaSeguro" StringFormat="{}{0:C}"/>
+                                <dg:DataGridColumn Title="Valor total" PropertyName="Valortotal" StringFormat="{}{0:C}"/>
+                            </dg:DataGrid.Columns>
+                            <dg:DataGrid.RowsBackgroundColorPalette>
+                                <dg:PaletteCollection>
+                                    <Color>#F2F2F2</Color>
+                                    <Color>#FFFFFF</Color>
+                                </dg:PaletteCollection>
+                            </dg:DataGrid.RowsBackgroundColorPalette>
+                        </dg:DataGrid>
+                    </StackLayout>
+                    <StackLayout  Orientation="Vertical" IsVisible="{Binding MuestraCotizacion}">
+                        <Label HorizontalTextAlignment="Start" Margin="0" Text="1. El valor comercial mínimo aceptado por Inter Rapidísimo S.A. para cada envío es el siguiente: $5.000 para envíos con peso de 1 a 2 kilos; $10.000 para envíos con peso de 2,1kg a 5kg; $25.000 para envíos de 5,1kg de peso en adelante y $100.000 para los envíos RapiCarga con destinos económicos.">
+                        </Label>
+                        <Label HorizontalTextAlignment="Start" Margin="0" Text="2. El valor comercial máximo para cada envío aceptado por Inter Rapidísimo S.A. es hasta 5 SMMLV.">
+                        </Label>
+                        <Label HorizontalTextAlignment="Start" Margin="0" Text="3. El valor Comercial declarado por el remitente, será el valor por el que INTER RAPIDÍSIMO responderá en caso de daño pérdida.">
+                        </Label>
+                        <Label  HorizontalTextAlignment="Start" Margin="0" Text="4. El peso registrado en esta cotización, se confrontará al momento de la admisión y en caso de no ser igual o amerite aplicarle peso por volumen, se ajustará el valor del servicio.">
+                        </Label>
+                        <Label HorizontalTextAlignment="Start" Margin="0" Text="5. El tiempo estimado de entrega se actualizará dependiendo la fecha y hora de recogida del envío.">
+                        </Label>
+                        <Label HorizontalTextAlignment="Start" Margin="0" Text="6. Sí al momento de admitir los envíos, el tipo de entrega es diferente  al registrado en esta cotización, su valor será recalculado">
+                        </Label>
+                    </StackLayout>
                 </StackLayout>
-                <StackLayout  Orientation="Vertical" IsVisible="{Binding MuestraCotizacion}">
-                    <Label HorizontalTextAlignment="Start" Margin="0" Text="1. El valor comercial mínimo aceptado por Inter Rapidísimo S.A. para cada envío es el siguiente: $5.000 para envíos con peso de 1 a 2 kilos; $10.000 para envíos con peso de 2,1kg a 5kg; $25.000 para envíos de 5,1kg de peso en adelante y $100.000 para los envíos RapiCarga con destinos económicos.">
-                    </Label>
-                    <Label HorizontalTextAlignment="Start" Margin="0" Text="2. El valor comercial máximo para cada envío aceptado por Inter Rapidísimo S.A. es hasta 5 SMMLV.">
-                    </Label>
-                    <Label HorizontalTextAlignment="Start" Margin="0" Text="3. El valor Comercial declarado por el remitente, será el valor por el que INTER RAPIDÍSIMO responderá en caso de daño pérdida.">
-                    </Label>
-                    <Label  HorizontalTextAlignment="Start" Margin="0" Text="4. El peso registrado en esta cotización, se confrontará al momento de la admisión y en caso de no ser igual o amerite aplicarle peso por volumen, se ajustará el valor del servicio.">
-                    </Label>
-                    <Label HorizontalTextAlignment="Start" Margin="0" Text="5. El tiempo estimado de entrega se actualizará dependiendo la fecha y hora de recogida del envío.">
-                    </Label>
-                    <Label HorizontalTextAlignment="Start" Margin="0" Text="6. Sí al momento de admitir los envíos, el tipo de entrega es diferente  al registrado en esta cotización, su valor será recalculado">
-                    </Label>
-                </StackLayout>
-            </StackLayout>
+                
+                <Label Grid.Row="3" HorizontalTextAlignment="Center" Text="Inter Rapidísimo S.A"/>
+            </Grid>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

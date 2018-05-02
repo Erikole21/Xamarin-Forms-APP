@@ -3,97 +3,110 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:ClientePeatonXamarin.Code"
              xmlns:autocomplete="clr-namespace:ClientePeatonXamarin.Controls;assembly=ClientePeatonXamarin"
-             x:Class="ClientePeatonXamarin.Views.RecogidasPage" Title="Recogidas">    
+             x:Class="ClientePeatonXamarin.Views.RecogidasPage" Title="Recogidas">
     <ContentPage.Content>
         <ScrollView x:Name="MainScroll">
-            <StackLayout Margin="5">
-                <StackLayout Orientation="Horizontal" Margin="0" HorizontalOptions="CenterAndExpand">
-                    <Label Text="Bienvenido " FontAttributes="Bold" />
-                    <Label Text="{Binding NombreCompletoPersona}" FontAttributes="Bold"/>
-                </StackLayout>
-                <Entry Text="{Binding DocumentoPersona}" IsEnabled="True"/>
-                <Entry Text="{Binding NombreCompletoPersona, Mode=TwoWay}" Keyboard="Text" Placeholder="Nombres y Apellidos">
-                    <Entry.Behaviors>
-                        <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" LongitudMaxima="250"  />
-                    </Entry.Behaviors>
-                </Entry>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition Width="40"/>
-                    </Grid.ColumnDefinitions>
-                    <Entry Text="{Binding DireccionRecogida, Mode=TwoWay}" Placeholder="Dirección de mi recogida">
+            <Grid ColumnSpacing="0" RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="168"/>
+                    <RowDefinition Height="48"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="20"/>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Aspect="AspectFill" Source="FondoSolicitaRecogida.png"/>
+                <Image Source="logoInter.png" HeightRequest="60" VerticalOptions="Start"/>
+                <Image Source="LineaNaranja.png" VerticalOptions="Start"/>
+                <Label Text="SOLICITA TU RECOGIDA" VerticalTextAlignment="End" Margin="15" FontSize="Medium" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="White"/>
+                <Image Grid.Row="1" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" Source="SelectCodigoBarrasNanranja.png" HeightRequest="10" WidthRequest="40"/>
+
+                <StackLayout Grid.Row="2" Margin="8">
+                    <StackLayout Orientation="Horizontal" Margin="0" HorizontalOptions="CenterAndExpand">
+                        <Label Text="Bienvenido " FontAttributes="Bold" />
+                        <Label Text="{Binding NombreCompletoPersona}" FontAttributes="Bold"/>
+                    </StackLayout>
+                    <Entry Text="{Binding DocumentoPersona}" IsEnabled="True"/>
+                    <Entry Text="{Binding NombreCompletoPersona, Mode=TwoWay}" Keyboard="Text" Placeholder="Nombres y Apellidos">
                         <Entry.Behaviors>
-                            <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" LongitudMaxima="150"  />
+                            <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" LongitudMaxima="250"  />
                         </Entry.Behaviors>
                     </Entry>
-                    <Image x:Name="ubicacion" Margin="5" Grid.Column="1" Source="interpoint.png"/>
-                </Grid>
-                <Entry Text="{Binding ComplementoDireccion, Mode=TwoWay}" Placeholder="Apto, Bloque, Casa #">
-                    <Entry.Behaviors>
-                        <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" LongitudMaxima="100"  />
-                    </Entry.Behaviors>
-                </Entry>
-                <Entry Text="{Binding EmailPersona, Mode=TwoWay}" Placeholder="Correo electrónico" Keyboard="Email">
-                    <Entry.Behaviors>
-                        <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" LongitudMaxima="40"  />
-                    </Entry.Behaviors>
-                </Entry>
-                <Entry Text="{Binding CelularPersona, Mode=TwoWay}" Placeholder="Número Celular" Keyboard="Numeric">
-                    <Entry.Behaviors>
-                        <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" LongitudMaxima="10"  />
-                    </Entry.Behaviors>
-                </Entry>
-                <autocomplete:AutoCompleteView SuggestionPlacement="Top" OnSuggestionOpen="Handle_OnSuggestionOpen" OpenOnFocus="true"
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="30"/>
+                        </Grid.ColumnDefinitions>
+                        <Entry Text="{Binding DireccionRecogida, Mode=TwoWay}" Placeholder="Dirección de mi recogida">
+                            <Entry.Behaviors>
+                                <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" LongitudMaxima="150"  />
+                            </Entry.Behaviors>
+                        </Entry>
+                        <Image x:Name="ubicacion" Margin="5" Grid.Column="1" Source="interpoint.png"/>
+                    </Grid>
+                    <Entry Text="{Binding ComplementoDireccion, Mode=TwoWay}" Placeholder="Apto, Bloque, Casa #">
+                        <Entry.Behaviors>
+                            <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" LongitudMaxima="100"  />
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Entry Text="{Binding EmailPersona, Mode=TwoWay}" Placeholder="Correo electrónico" Keyboard="Email">
+                        <Entry.Behaviors>
+                            <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" LongitudMaxima="40"  />
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Entry Text="{Binding CelularPersona, Mode=TwoWay}" Placeholder="Número Celular" Keyboard="Numeric">
+                        <Entry.Behaviors>
+                            <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" LongitudMaxima="10"  />
+                        </Entry.Behaviors>
+                    </Entry>
+                    <autocomplete:AutoCompleteView SuggestionPlacement="Top" OnSuggestionOpen="Handle_OnSuggestionOpen" OpenOnFocus="true"
                                                Placeholder="Ciudad de Recogida..." ItemsSource="{Binding Ciudades}" ShowSeparator="False"
                                                SearchMember="Nombre" MaxResults="3" SelectedItem="{Binding CiudadSeleccionada}" ItemTemplate="{StaticResource ItemCiudad}">
-                </autocomplete:AutoCompleteView>                
-                <Label HorizontalTextAlignment="Center" Text="Revise que sus datos sean correctos. De lo contrario, actualícelos" FontAttributes="Bold"/>
-                <Label HorizontalTextAlignment="Start" Margin="0" Text="Fecha Recogida"/>
-                <StackLayout Orientation="Horizontal">
-                    <DatePicker Date="{Binding FechaRecogida, Mode=TwoWay}" MinimumDate="{Binding FechaMinima}"/>
-                    <TimePicker Time="{Binding HoraRecogida, Mode=TwoWay}" />
+                    </autocomplete:AutoCompleteView>
+                    <Label HorizontalTextAlignment="Center" Text="Revise que sus datos sean correctos. De lo contrario, actualícelos" FontAttributes="Bold"/>
+                    <Label HorizontalTextAlignment="Start" Margin="0" Text="Fecha Recogida"/>
+                    <StackLayout Orientation="Horizontal">
+                        <DatePicker Date="{Binding FechaRecogida, Mode=TwoWay}" MinimumDate="{Binding FechaMinima}"/>
+                        <TimePicker Time="{Binding HoraRecogida, Mode=TwoWay}" />
+                    </StackLayout>
+                    <Entry Text="{Binding PreguntarPor, Mode=TwoWay}" Placeholder="Preguntar por">
+                        <Entry.Behaviors>
+                            <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" LongitudMaxima="250"  />
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Label HorizontalTextAlignment="Center" Text="Descripcion de los envíos a recoger" FontAttributes="Bold"/>
+                    <Entry Text="{Binding DescripcionEnvios, Mode=TwoWay}" Placeholder="Ejemplo: Sobre Carta + Caja + Nevera + TV">
+                        <Entry.Behaviors>
+                            <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" LongitudMaxima="250"  />
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>                            
+                        </Grid.ColumnDefinitions>
+                        <Entry Text="{Binding TotalPiezas, Mode=TwoWay}" Placeholder="# Total Piezas" Keyboard="Numeric">
+                            <Entry.Behaviors>
+                                <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" IsNumerico="True" ValorMaximo="99"  />
+                            </Entry.Behaviors>
+                        </Entry>
+                        <Entry Grid.Column="1" Text="{Binding PesoAproximado, Mode=TwoWay}" Placeholder="Peso Aprox. Kilos" Keyboard="Numeric">
+                            <Entry.Behaviors>
+                                <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" IsNumerico="True" ValorMaximo="999" />
+                            </Entry.Behaviors>
+                        </Entry>                        
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="40"/>
+                        </Grid.ColumnDefinitions>
+                        <Label HorizontalTextAlignment="Start" Margin="0" Text="Antes de programar su recogida, es importante que cotice el valor del servicio."/>
+                        <Image x:Name="cotizar" Margin="5" Grid.Column="1" Source="cotizaactivonew.png"/>
+                    </Grid>
+                    <Button x:Name="guardarButton" Text="Guardar" Command="{Binding GuardarRecogidaCommand}" Margin="20,5,20,5" TextColor="White" BackgroundColor="{StaticResource primary-back-title-color}"/>
+                    <Editor HeightRequest="100" Margin="0" Text="Comuníquese gratis al teléfono 01 8000 942777 desde cualquier lugar del país y en Bogotá 5605000" />
                 </StackLayout>
-                <Entry Text="{Binding PreguntarPor, Mode=TwoWay}" Placeholder="Preguntar por">
-                    <Entry.Behaviors>
-                        <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" LongitudMaxima="250"  />
-                    </Entry.Behaviors>
-                </Entry>
-                <Label HorizontalTextAlignment="Center" Text="Descripcion de los envíos a recoger" FontAttributes="Bold"/>
-                <Entry Text="{Binding DescripcionEnvios, Mode=TwoWay}" Placeholder="Ejemplo: Sobre Carta + Caja + Nevera + TV">
-                    <Entry.Behaviors>
-                        <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" LongitudMaxima="250"  />
-                    </Entry.Behaviors>
-                </Entry>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <!--<ColumnDefinition Width="40"/>-->
-                    </Grid.ColumnDefinitions>
-                    <Entry Text="{Binding TotalPiezas, Mode=TwoWay}" Placeholder="# Total Piezas" Keyboard="Numeric">
-                        <Entry.Behaviors>
-                            <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" IsNumerico="True" ValorMaximo="99"  />
-                        </Entry.Behaviors>
-                    </Entry>
-                    <Entry Grid.Column="1" Text="{Binding PesoAproximado, Mode=TwoWay}" Placeholder="Peso Aprox. Kilos" Keyboard="Numeric">
-                        <Entry.Behaviors>
-                            <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" IsNumerico="True" ValorMaximo="999" />
-                        </Entry.Behaviors>
-                    </Entry>
-                    <!--<Image x:Name="fotoCaptura" Grid.Column="2" Source="capturaguianara.png" Margin="5" />-->
-                </Grid>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition Width="40"/>
-                    </Grid.ColumnDefinitions>
-                    <Label HorizontalTextAlignment="Start" Margin="0" FontAttributes="Bold" Text="Antes de programar su recogida, es importante que cotice el valor del servicio."/>
-                    <Image x:Name="cotizar" Margin="5" Grid.Column="1" Source="cotizaactivonew.png"/>
-                </Grid>
-                <Button x:Name="guardarButton" Text="Guardar" Command="{Binding GuardarRecogidaCommand}" TextColor="{StaticResource primary-title-color}" BackgroundColor="{StaticResource naranja}"/>
-                <Editor HeightRequest="100" Margin="0" Text="Comuníquese gratis al teléfono 01 8000 942777 desde cualquier lugar del país y en Bogotá 5605000" />
-            </StackLayout>
+                <Label Grid.Row="3" HorizontalTextAlignment="Center" Text="Inter Rapidísimo S.A"/>
+            </Grid>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

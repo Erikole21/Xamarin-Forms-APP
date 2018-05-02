@@ -3,60 +3,74 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:ClientePeatonXamarin.Code"
              xmlns:autocomplete="clr-namespace:ClientePeatonXamarin.Controls;assembly=ClientePeatonXamarin"
-             x:Class="ClientePeatonXamarin.Views.PortafolioPage" Title="Portafolio">    
+             x:Class="ClientePeatonXamarin.Views.PortafolioPage" Title="Portafolio">
     <ContentPage.Content>
         <ScrollView x:Name="MainScroll">
-            <StackLayout Margin="5">
-                <StackLayout Orientation="Horizontal" Margin="0" HorizontalOptions="CenterAndExpand">
-                    <Label Text="Bienvenido " FontAttributes="Bold" />
-                    <Label Text="{Binding NombreCompletoPersona}" FontAttributes="Bold"/>
-                </StackLayout>
-                <Entry Placeholder="Número de cédula o NIT" Margin="5" Text="{Binding Usuario,Mode=TwoWay}" Keyboard="Numeric">
-                    <Entry.Behaviors>
-                        <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" LongitudMaxima="11"  />
-                    </Entry.Behaviors>
-                </Entry>
-                <Entry Text="{Binding NombreCompletoPersona, Mode=TwoWay}" Keyboard="Text" Placeholder="Nombres y Apellidos">
-                    <Entry.Behaviors>
-                        <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" LongitudMaxima="250"  />
-                    </Entry.Behaviors>
-                </Entry>
-                <autocomplete:AutoCompleteView SuggestionPlacement="Top" OnSuggestionOpen="Handle_OnSuggestionOpen" OpenOnFocus="true"
-                                               Placeholder="Ciudad de Origen..." ItemsSource="{Binding Ciudades}" ShowSeparator="False"
-                                               SearchMember="Nombre" MaxResults="3" SelectedItem="{Binding CiudadSeleccionada}" ItemTemplate="{StaticResource ItemCiudad}">
-                </autocomplete:AutoCompleteView>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="40"/>
-                    </Grid.ColumnDefinitions>
-                    <Entry Text="{Binding DireccionRecogida, Mode=TwoWay}" Placeholder="Dirección de la visita">
+            <Grid ColumnSpacing="0" RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="168"/>
+                    <RowDefinition Height="48"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="20"/>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Aspect="AspectFill" Source="FondoCotizaEnvio.png"/>
+                <Image Source="logoInter.png" HeightRequest="60" VerticalOptions="Start"/>
+                <Image Source="LineaNaranja.png" VerticalOptions="Start"/>
+                <Label Text="SOLICITA ESTUDIO DE FRANQUICIA" VerticalTextAlignment="End" Margin="15" FontSize="Medium" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="White"/>
+                <Image Grid.Row="1" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" Source="SelectCodigoBarrasNanranja.png" HeightRequest="10" WidthRequest="40"/>
+                <StackLayout Grid.Row="2" Margin="5">
+                    <StackLayout Orientation="Horizontal" Margin="0" HorizontalOptions="CenterAndExpand">
+                        <Label Text="Bienvenido " FontAttributes="Bold" />
+                        <Label Text="{Binding NombreCompletoPersona}" FontAttributes="Bold"/>
+                    </StackLayout>
+                    <Entry Placeholder="Número de cédula o NIT" Margin="5" Text="{Binding Usuario,Mode=TwoWay}" Keyboard="Numeric">
                         <Entry.Behaviors>
-                            <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" LongitudMaxima="150"  />
+                            <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" LongitudMaxima="11"  />
                         </Entry.Behaviors>
                     </Entry>
-                    <Image x:Name="ubicacion" Margin="5" Grid.Column="1" Source="interpoint.png"/>
-                </Grid>
-                <Entry Text="{Binding EmailPersona, Mode=TwoWay}" Placeholder="Correo electrónico" Keyboard="Email">
-                    <Entry.Behaviors>
-                        <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" LongitudMaxima="40"  />
-                    </Entry.Behaviors>
-                </Entry>
-                <Entry Text="{Binding CelularPersona, Mode=TwoWay}" Placeholder="Número Celular" Keyboard="Numeric">
-                    <Entry.Behaviors>
-                        <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" LongitudMaxima="10"  />
-                    </Entry.Behaviors>
-                </Entry>
-                <Label HorizontalTextAlignment="Start" Margin="0" Text="Fecha de la visita"/>                                
-                <StackLayout Orientation="Horizontal">
-                    <DatePicker Date="{Binding FechaRecogida, Mode=TwoWay}" MinimumDate="{Binding FechaMinima}"/>
-                    <TimePicker Time="{Binding HoraRecogida, Mode=TwoWay}" />
+                    <Entry Text="{Binding NombreCompletoPersona, Mode=TwoWay}" Keyboard="Text" Placeholder="Nombres y Apellidos">
+                        <Entry.Behaviors>
+                            <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" LongitudMaxima="250"  />
+                        </Entry.Behaviors>
+                    </Entry>
+                    <autocomplete:AutoCompleteView SuggestionPlacement="Top" OnSuggestionOpen="Handle_OnSuggestionOpen" OpenOnFocus="true"
+                                               Placeholder="Ciudad de Origen..." ItemsSource="{Binding Ciudades}" ShowSeparator="False"
+                                               SearchMember="Nombre" MaxResults="3" SelectedItem="{Binding CiudadSeleccionada}" ItemTemplate="{StaticResource ItemCiudad}">
+                    </autocomplete:AutoCompleteView>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="30"/>
+                        </Grid.ColumnDefinitions>
+                        <Entry Text="{Binding DireccionRecogida, Mode=TwoWay}" Placeholder="Dirección de la visita">
+                            <Entry.Behaviors>
+                                <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" LongitudMaxima="150"  />
+                            </Entry.Behaviors>
+                        </Entry>
+                        <Image x:Name="ubicacion" Margin="5" Grid.Column="1" Source="interpoint.png"/>
+                    </Grid>
+                    <Entry Text="{Binding EmailPersona, Mode=TwoWay}" Placeholder="Correo electrónico" Keyboard="Email">
+                        <Entry.Behaviors>
+                            <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" LongitudMaxima="40"  />
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Entry Text="{Binding CelularPersona, Mode=TwoWay}" Placeholder="Número Celular" Keyboard="Numeric">
+                        <Entry.Behaviors>
+                            <local:ObligatorioBehavior ButtonValida="{x:Reference Name=guardarButton}" LongitudMaxima="10"  />
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Label HorizontalTextAlignment="Start" Margin="0" Text="Fecha de la visita"/>
+                    <StackLayout Orientation="Horizontal">
+                        <DatePicker Date="{Binding FechaRecogida, Mode=TwoWay}" MinimumDate="{Binding FechaMinima}"/>
+                        <TimePicker Time="{Binding HoraRecogida, Mode=TwoWay}" />
+                    </StackLayout>
+                    <Entry Text="{Binding PreguntarPor, Mode=TwoWay}" Placeholder="Preguntar por"/>
+                    <Label HorizontalTextAlignment="Start" Margin="0" Text="Observaciones"/>
+                    <Editor HeightRequest="100" Margin="0" Text="{Binding Observaciones}" />
+                    <Button x:Name="guardarButton" Text="Solicitar visita" Command="{Binding GuardarPortafolioCommand}" Margin="20,5,20,5"  TextColor="White" BackgroundColor="{StaticResource primary-back-title-color}"/>
                 </StackLayout>
-                <Entry Text="{Binding PreguntarPor, Mode=TwoWay}" Placeholder="Preguntar por"/>
-                <Label HorizontalTextAlignment="Start" Margin="0" Text="Observaciones"/>
-                <Editor HeightRequest="100" Margin="0" Text="{Binding Observaciones}" />
-                <Button x:Name="guardarButton" Text="Solicitar visita" Command="{Binding GuardarPortafolioCommand}" TextColor="{StaticResource primary-title-color}" BackgroundColor="{StaticResource naranja}"/>
-            </StackLayout>
+                <Label Grid.Row="3" HorizontalTextAlignment="Center" Text="Inter Rapidísimo S.A"/>
+            </Grid>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

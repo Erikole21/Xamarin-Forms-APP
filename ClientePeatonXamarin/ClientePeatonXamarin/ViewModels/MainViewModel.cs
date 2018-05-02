@@ -13,8 +13,8 @@ namespace ClientePeatonXamarin.ViewModels
 
         public MainViewModel()
         {
-            //numeroGuia = "700011041522";
             MisRecogidasCommand = new Command(MisRecogidas);
+            verOpciones = true;
         }
 
         public void Buscar()
@@ -50,6 +50,19 @@ namespace ClientePeatonXamarin.ViewModels
 
             }
         }
+
+        private bool verOpciones;
+
+        public bool VerOpciones
+        {
+            get { return verOpciones; }
+            set
+            {
+                verOpciones = value;
+                OnPropertyChanged("VerOpciones");
+            }
+        }
+
 
         private string numeroGuia;
 

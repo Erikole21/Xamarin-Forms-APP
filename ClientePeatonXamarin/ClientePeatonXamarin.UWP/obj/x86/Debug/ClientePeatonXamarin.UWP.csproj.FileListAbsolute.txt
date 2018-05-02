@@ -210,7 +210,6 @@ F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\bi
 F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\bin\x86\Debug\ZXing.Net.Mobile.Forms.dll
 F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\bin\x86\Debug\ClientePeatonXamarin.dll
 F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\bin\x86\Debug\ClientePeatonXamarin.pdb
-F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\obj\x86\Debug\ClientePeatonXamarin.UWP.csprojResolveAssemblyReference.cache
 F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\obj\x86\Debug\App.g.i.cs
 F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\obj\x86\Debug\App.g.cs
 F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\obj\x86\Debug\MainPage.g.i.cs
@@ -336,3 +335,4 @@ F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\ob
 F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\obj\x86\Debug\ZXingNetMobile.pri.xml
 F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\obj\x86\Debug\ZXing.Net.Mobile.Forms.WindowsUniversal.pri.xml
 F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\obj\x86\Debug\ProjectArchitectures.txt
+F:\Fuentes\ClientePeatonXamarin\ClientePeatonXamarin\ClientePeatonXamarin.UWP\obj\x86\Debug\ClientePeatonXamarin.UWP.csprojResolveAssemblyReference.cache

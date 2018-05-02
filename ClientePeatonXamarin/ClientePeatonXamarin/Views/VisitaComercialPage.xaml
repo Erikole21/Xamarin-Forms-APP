@@ -1,15 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ClientePeatonXamarin.Views.VisitaComercialPage" Title="Visita Comercial" BackgroundImage="backgroundhome2.png">
+             x:Class="ClientePeatonXamarin.Views.VisitaComercialPage" Title="Visita Comercial">
     <ContentPage.Content>
-        <Grid Margin="5">           
-            <StackLayout VerticalOptions="Center">                
-                <Grid Padding="10"  HorizontalOptions="FillAndExpand">
-                    <Image x:Name="portafolio" WidthRequest="110" HeightRequest="110" Source="newofrecerportafolioservicios.png" Margin="15" />
-                    <Image x:Name="franquicia" WidthRequest="110" HeightRequest="110" Grid.Row="1" Source="newestudiofranquicia.png" Margin="15"/>
-                </Grid>                
-            </StackLayout>
+        <Grid ColumnSpacing="0" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="168"/>
+                <RowDefinition Height="48"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="20"/>
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0" Aspect="AspectFill" Source="FondoCotizaEnvio.png"/>
+            <Image Source="logoInter.png" HeightRequest="60" VerticalOptions="Start"/>
+            <Image Source="LineaNaranja.png" VerticalOptions="Start"/>
+            <Label Text="SOLICITA UNA VISITA COMERCIAL" VerticalTextAlignment="End" Margin="15" FontSize="Medium" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="White"/>
+            <Image Grid.Row="1" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" Source="SelectCodigoBarrasNanranja.png" HeightRequest="10" WidthRequest="40"/>
+            <Grid Grid.Row="2" Margin="5">
+                <StackLayout VerticalOptions="Center">
+                    <Grid Padding="10"  HorizontalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Image x:Name="portafolio" Aspect="Fill" Source="newofrecerportafolioservicios.png" Margin="10" />
+                        <Image x:Name="franquicia" Aspect="Fill" Grid.Row="1" Source="newestudiofranquicia.png" Margin="10"/>
+                    </Grid>
+                </StackLayout>
+            </Grid>
+            <Label Grid.Row="3" HorizontalTextAlignment="Center" Text="Inter Rapidísimo S.A"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

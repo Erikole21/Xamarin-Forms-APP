@@ -32,18 +32,27 @@ namespace ClientePeatonXamarin.Services
 
         public async Task<ADRastreoGuiaDC> ObtenerRastreoGuia(string numeroGuia)
         {
-            var client = new RestClient(Configuracion.BaseServicioInterUrl);
-            var request = new RestRequest(string.Format("Mensajeria/ObtenerRastreoGuias?guias={0}", numeroGuia), Method.GET);
-            var response = await client.ExecuteGetTaskAsync<List<ADRastreoGuiaDC>>(request);
-            if (response.ResponseStatus == ResponseStatus.Completed)
+            try
             {
-                if (response.StatusCode == System.Net.HttpStatusCode.InternalServerError)
-                    return null; //Guia no Existe. o no se puede conectar
+                var client = new RestClient(Configuracion.BaseServicioInterUrl);
+                var request = new RestRequest(string.Format("Mensajeria/ObtenerRastreoGuias?guias={0}", numeroGuia), Method.GET);
+                var response = await client.ExecuteGetTaskAsync<List<ADRastreoGuiaDC>>(request);
+                if (response.ResponseStatus == ResponseStatus.Completed)
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.InternalServerError)
+                        return null; //Guia no Existe. o no se puede conectar
 
-                return response.Data.FirstOrDefault();
+                    return response.Data.FirstOrDefault();
+                }
+                else
+                    return null;
+
             }
-            else
+            catch
+            {
+                //se atrapa la excepcion generalemte por conexion con el servidor para q no totee la APP
                 return null;
+            }
         }
 
     }

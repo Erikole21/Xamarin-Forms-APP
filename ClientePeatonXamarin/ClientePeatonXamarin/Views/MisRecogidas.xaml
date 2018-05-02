@@ -37,10 +37,22 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <ScrollView Padding="5">
-            <repeater:RepeaterView x:Name="RepiterRecogidas" Margin="0.5,0,0.5,0.5" ShowSeparator="true" SeparatorHeight="2" SeparatorColor="Silver"
+        <ScrollView>
+            <Grid ColumnSpacing="0" RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="168"/>
+                    <RowDefinition Height="48"/>
+                    <RowDefinition Height="*"/>                    
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Aspect="AspectFill" Source="FondoCotizaEnvio.png"/>
+                <Image Source="logoInter.png" HeightRequest="60" VerticalOptions="Start"/>
+                <Image Source="LineaNaranja.png" VerticalOptions="Start"/>
+                <Label Text="MIS RECOGIDAS" VerticalTextAlignment="End" Margin="15" FontSize="Medium" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="White"/>
+                <Image Grid.Row="1" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" Source="SelectCodigoBarrasNanranja.png" HeightRequest="10" WidthRequest="40"/>
+                <repeater:RepeaterView Grid.Row="2" x:Name="RepiterRecogidas" Margin="0.5,0,0.5,0.5" ShowSeparator="true" SeparatorHeight="2" SeparatorColor="Silver"
                                    ItemsSource="{Binding Recogidas}" ItemTemplate="{StaticResource ItemDatos}" >
-            </repeater:RepeaterView>
+                </repeater:RepeaterView>                
+            </Grid>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
